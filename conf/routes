@@ -8,14 +8,17 @@ GET     /                                       Application.index
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
+# Import CRUD routes
+*       /admin/                                  module:crud
+
+# Import Secure routes
+*       /                                       module:secure
+
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 GET     /assets/                                staticDir:app/views/syrena/assets
 GET     /pm/assets/                             staticDir:app/views/syrena/assets
 GET     /exercito/assets/                       staticDir:app/views/syrena/assets
-
-# Import Secure routes
-*       /                                       module:secure
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

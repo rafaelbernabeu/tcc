@@ -1,14 +1,11 @@
 package models;
 
-import javax.persistence.Entity;
-
 /**
  * Created by Rafael on 18/09/2015.
  */
-@Entity
 public enum TipoLogin {
 
-    EXERCITO("Exército"), POLICIAMILITAR("Polícia Militar");
+    EXERCITO("Exercito"), POLICIAMILITAR("Policia Militar");
 
     TipoLogin(String descricao){
         this.descricao = descricao;
@@ -18,5 +15,10 @@ public enum TipoLogin {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    @Override
+    public String toString() {
+        return this.getDescricao();
     }
 }

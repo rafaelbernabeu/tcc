@@ -2,6 +2,9 @@
 <module relativePaths="true" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://$MODULE_DIR$/../../play-1.3.1/modules/crud">
+      <sourceFolder url="file://$MODULE_DIR$/../../play-1.3.1/modules/crud/app" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../play-1.3.1/modules/docviewer">
       <sourceFolder url="file://$MODULE_DIR$/../../play-1.3.1/modules/docviewer/app" isTestSource="false" />
     </content>
