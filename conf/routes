@@ -11,6 +11,11 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 GET     /assets/                                staticDir:app/views/syrena/assets
+GET     /pm/assets/                             staticDir:app/views/syrena/assets
+GET     /exercito/assets/                       staticDir:app/views/syrena/assets
+
+# Import Secure routes
+*       /                                       module:secure
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

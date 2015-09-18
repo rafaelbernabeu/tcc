@@ -1,4 +1,10 @@
-#{extends '/syrena/template.html' /}
+#{extends '/syrena/templateApplication.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+
+<a href="@{Exercito.index}">Exército</a>
+<a href="@{PM.index}">Polícia Militar</a>
+
+#{set 'moreStyles'}
+
+#{/set}
