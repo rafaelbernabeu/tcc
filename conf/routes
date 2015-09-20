@@ -9,7 +9,7 @@ GET     /                                       Application.index
 GET     /favicon.ico                            404
 
 # Import CRUD routes
-*       /admin/                                  module:crud
+*       /admin                                  module:crud
 
 # Import Secure routes
 *       /                                       module:secure

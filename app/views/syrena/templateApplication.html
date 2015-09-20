@@ -40,18 +40,12 @@
             <div class="side-header">
                 <h1 id="brand" class="brand" style="text-align: center;">
                     <a href="@{Application.index}" style="text-transform: capitalize;">
-                        TCC II
+                        TCC II - Entrega Final
                     </a>
                 </h1><!-- /brand -->
-                <form id="smart-search" class="side-form hide" role="form">
-                    <input type="text" class="form-control" date-target=".side-wrapper" placeholder="Smart Finder">
-                </form><!-- /side wrapper -->
             </div><!-- /side header -->
             <div class="side-body">
                 <div class="side-wrapper side-wrapper-large">
-                    <div class="side-wrapper-status lead">No result, please start typing!</div>
-                    <div class="side-wrapper-result">
-                    </div><!-- /side-wrapper-result -->
                 </div><!-- /side wrapper -->
                 <nav class="side-nav">
                     <ul>
@@ -59,6 +53,24 @@
                             <a href="@{Application.index}">
                                 <i class="nav-item-icon icon ion-home"></i>
                                 Home
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="@{Exercito.index}">
+                                <i class="nav-item-icon glyphicon glyphicon-star"></i>
+                                Exército
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="@{PM.index}">
+                                <i class="nav-item-icon glyphicon glyphicon-user"></i>
+                                Polícia Militar
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="@{Admin.index}">
+                                <i class="nav-item-icon glyphicon glyphicon-cog"></i>
+                                Administração
                             </a>
                         </li>
                     </ul><!-- /nav ul-->
@@ -70,7 +82,6 @@
             <header class="content-header">
                 <div class="header-actions pull-left">
                     <button id="toggle-content" class="btn btn-icon" type="button"><i class="icon ion-navicon-round"></i></button>
-                    <button id="toggle-search" class="btn btn-icon" type="button"><i class="icon ion-search"></i></button>
                 </div><!-- /header actions -->
 
                 <h1 class="content-title" style="text-transform: capitalize;">#{get 'title' /}</h1>

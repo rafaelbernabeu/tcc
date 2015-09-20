@@ -1,11 +1,11 @@
 package models;
 
 import play.data.validation.Email;
+import play.data.validation.Password;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 
 /**
  * Created by Rafael on 18/09/2015.
@@ -17,10 +17,17 @@ public class Usuario extends Model {
     @Required
     public String email;
 
+    @Password
     @Required
     public String password;
-    public String nomeCompleto;
+    public String nome;
     public String matricula;
     public TipoLogin instituicao;
 
+    public static Usuario connect(String email, String password) {
+        return find("byEmailAndPassword", email, password).first();
+    }
+    public String toString() {
+        return nome;
+    }
 }
