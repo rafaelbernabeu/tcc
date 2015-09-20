@@ -20,8 +20,14 @@ public class Usuario extends Model {
     @Password
     @Required
     public String password;
+
+    @Required
     public String nome;
+
+    @Required
     public String matricula;
+
+    @Required
     public TipoLogin instituicao;
 
     public static Usuario connect(String email, String password) {
