@@ -2,14 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16f915d3-5cfd-424d-93d9-38af26766ce9" name="Default" comment="Logout + User">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Requisicao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/TipoLogin.java" afterPath="$PROJECT_DIR$/app/models/TipoLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Usuario.java" afterPath="$PROJECT_DIR$/app/models/Usuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_syrena_templateApplication.html" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_syrena_templateApplication.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_syrena_templatePM.html" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_syrena_templatePM.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcc.iws" afterPath="$PROJECT_DIR$/tcc.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/syrena/templateApplication.html" afterPath="$PROJECT_DIR$/app/views/syrena/templateApplication.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/syrena/templatePM.html" afterPath="$PROJECT_DIR$/app/views/syrena/templatePM.html" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\modules\secure" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\BootstrapStart" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\BootstrapStop" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\DocViewerPlugin" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_Application_index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_Exercito_index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_PM_index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_errors_404.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_errors_500.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_main.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_syrena_index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_syrena_template.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_syrena_templateApplication.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_syrena_templateExercito.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_syrena_templateIndex.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_app_views_syrena_templatePM.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_module_secure__app_views_Secure_layout.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_module_secure__app_views_Secure_login.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_play__framework_templates_errors_404.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_play__framework_templates_tags_404.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_play__framework_templates_tags_500.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_play__framework_templates_tags_welcome.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\_play__framework_templates_tags_welcome_en.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.Application" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.Check" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.Exercito" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.PM" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.PlayDocumentation" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.PoliciaMilitar" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.ProjectDocumentation" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.Secure" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\controllers.Secure$Security" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\helpers.CheatSheetHelper" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\helpers.CheatSheetHelper$1" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\helpers.CheatSheetHelper$2" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\helpers.CheatSheetHelper$3" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\helpers.CheatSheetHelper$4" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\helpers.LangMenuHelper" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\helpers.LangMenuHelper$1" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\bytecode\DEV\helpers.LangMenuHelper$LangMenu" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\BootstrapStart.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\BootstrapStop.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\DocViewerPlugin.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\Application.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\Check.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\Exercito.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\PM.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\PlayDocumentation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\PoliciaMilitar.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\ProjectDocumentation.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\Secure$Security.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\controllers\Secure.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\helpers\CheatSheetHelper$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\helpers\CheatSheetHelper$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\helpers\CheatSheetHelper$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\helpers\CheatSheetHelper$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\helpers\CheatSheetHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\helpers\LangMenuHelper$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\helpers\LangMenuHelper$LangMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\opt\workspace\tcc\tmp\classes\helpers\LangMenuHelper.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/syrena/templateExercito.html" afterPath="$PROJECT_DIR$/app/views/syrena/templateExercito.html" />
     </list>
     <ignored path="tcc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,17 +109,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/Admin/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/Usuarios/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35111877">
+            <state vertical-scroll-proportion="-7.8461537">
               <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
               <folding />
             </state>
@@ -86,7 +139,7 @@
       <file leaf-file-name="templateApplication.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/syrena/templateApplication.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.692308">
+            <state vertical-scroll-proportion="0.0">
               <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#aside#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -106,11 +159,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="templateExercito.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="templateExercito.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/syrena/templateExercito.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="72" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.26748252">
+              <caret line="67" column="48" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -119,7 +172,7 @@
       <file leaf-file-name="templatePM.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/syrena/templatePM.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.192307">
+            <state vertical-scroll-proportion="0.0">
               <caret line="102" column="59" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
               <folding />
             </state>
@@ -184,7 +237,6 @@
         <option value="$PROJECT_DIR$/app/controllers/Exercito.java" />
         <option value="$PROJECT_DIR$/app/controllers/Application.java" />
         <option value="$PROJECT_DIR$/app/views/Application/index.html" />
-        <option value="$PROJECT_DIR$/app/views/syrena/templateExercito.html" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/conf/messages" />
         <option value="$PROJECT_DIR$/app/views/Usuario/list.html" />
@@ -194,6 +246,7 @@
         <option value="$PROJECT_DIR$/app/models/Usuario.java" />
         <option value="$PROJECT_DIR$/app/models/TipoLogin.java" />
         <option value="$PROJECT_DIR$/app/views/syrena/templatePM.html" />
+        <option value="$PROJECT_DIR$/app/views/syrena/templateExercito.html" />
       </list>
     </option>
   </component>
@@ -208,10 +261,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1378" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -261,9 +313,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -574,6 +623,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -767,7 +819,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -779,7 +831,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18228404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18208517" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -912,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,7 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,7 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20481928">
           <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,7 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1113,7 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,7 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,7 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,7 +1218,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/syrena/templateApplication.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.692308">
+        <state vertical-scroll-proportion="0.0">
           <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#aside#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1212,17 +1255,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/syrena/templateExercito.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="72" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/syrena/templatePM.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.192307">
+        <state vertical-scroll-proportion="0.0">
           <caret line="102" column="59" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
           <folding />
         </state>
@@ -1230,8 +1265,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Usuarios/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35111877">
+        <state vertical-scroll-proportion="-7.8461537">
           <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/syrena/templateExercito.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26748252">
+          <caret line="67" column="48" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
           <folding />
         </state>
       </provider>
