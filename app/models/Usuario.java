@@ -33,6 +33,7 @@ public class Usuario extends Model {
     public static Usuario connect(String email, String password) {
         return find("byEmailAndPassword", email, password).first();
     }
+
     public String toString() {
         return nome;
     }

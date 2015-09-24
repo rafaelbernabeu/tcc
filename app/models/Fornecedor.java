@@ -13,4 +13,8 @@ public class Fornecedor extends Model {
     public String nome;
     public String localDeEntrega;
 
+    @Override
+    public String toString() {
+        return nome;
+    }
 }
