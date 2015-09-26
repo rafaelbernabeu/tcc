@@ -1,13 +1,13 @@
-package models;
+package models.enums;
 
 /**
- * Created by Rafael on 18/09/2015.
+ * Created by Rafael on 23/09/2015.
  */
-public enum TipoLogin {
+public enum TipoRequisicao {
 
-    EXERCITO("Exercito"), POLICIAMILITAR("Policia Militar"), ADMIN("Administrador");
+    AQUISICAO("Aquisição"), RENOVACAO("Renovação"), TRANSFERENCIA("Transferência");
 
-    TipoLogin(String descricao){
+    TipoRequisicao(String descricao){
         this.descricao = descricao;
     }
 
@@ -21,4 +21,5 @@ public enum TipoLogin {
     public String toString() {
         return this.getDescricao();
     }
+
 }

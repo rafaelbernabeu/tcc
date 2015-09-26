@@ -1,5 +1,7 @@
 package models;
 
+import models.enums.Estado;
+import models.enums.TipoLogin;
 import play.data.validation.Email;
 import play.data.validation.Password;
 import play.data.validation.Required;
@@ -29,6 +31,8 @@ public class Usuario extends Model {
 
     @Required
     public TipoLogin instituicao;
+
+    public Estado estado;
 
     public static Usuario connect(String email, String password) {
         return find("byEmailAndPassword", email, password).first();

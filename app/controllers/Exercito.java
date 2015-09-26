@@ -1,6 +1,6 @@
 package controllers;
 
-import models.TipoLogin;
+import models.enums.TipoLogin;
 import models.Usuario;
 import play.mvc.Before;
 import play.mvc.Controller;

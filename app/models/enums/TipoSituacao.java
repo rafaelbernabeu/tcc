@@ -1,13 +1,13 @@
-package models;
+package models.enums;
 
 /**
  * Created by Rafael on 23/09/2015.
  */
-public enum TipoRequisicao {
+public enum TipoSituacao {
 
-    AQUISICAO("Aquisição"), RENOVACAO("Renovação"), TRANSFERENCIA("Transferência");
+    ATIVO("Ativo"), INATIVO("Inativo"), REFORMADO("Reformado");
 
-    TipoRequisicao(String descricao){
+    TipoSituacao(String descricao){
         this.descricao = descricao;
     }
 

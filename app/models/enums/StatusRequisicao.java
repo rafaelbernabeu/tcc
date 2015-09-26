@@ -1,13 +1,13 @@
-package models;
+package models.enums;
 
 /**
- * Created by Rafael on 23/09/2015.
+ * Created by Rafael on 26/09/2015.
  */
-public enum TipoSituacao {
+public enum StatusRequisicao {
 
-    ATIVO("Ativo"), INATIVO("Inativo"), REFORMADO("Reformado");
+    FAVORAVEL("Favorável"), DESFAVORAVEL("Desfavorável"), AGUARDANDO("Aguardando");
 
-    TipoSituacao(String descricao){
+    StatusRequisicao(String descricao){
         this.descricao = descricao;
     }
 
