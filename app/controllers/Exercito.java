@@ -1,10 +1,14 @@
 package controllers;
 
+import models.AquisicaoRenovacao;
+import models.enums.TipoParecer;
 import models.enums.TipoLogin;
 import models.Usuario;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
+
+import java.util.List;
 
 /**
  * Created by Rafael on 17/09/2015.
@@ -26,6 +30,11 @@ public class Exercito extends Controller {
 
     public static void index() {
         render();
+    }
+
+    public static void aquisicoesPendentes() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecer", TipoParecer.PENDENTE).fetch();
+        System.out.println(aquisicoes.size());
     }
 
 }

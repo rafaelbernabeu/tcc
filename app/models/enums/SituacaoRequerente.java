@@ -3,11 +3,11 @@ package models.enums;
 /**
  * Created by Rafael on 23/09/2015.
  */
-public enum TipoSituacao {
+public enum SituacaoRequerente {
 
     ATIVO("Ativo"), INATIVO("Inativo"), REFORMADO("Reformado");
 
-    TipoSituacao(String descricao){
+    SituacaoRequerente(String descricao){
         this.descricao = descricao;
     }
 

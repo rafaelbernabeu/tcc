@@ -6,6 +6,9 @@
 GET     /                                       Application.index
 
 GET     /pm/requisicoes/aquisicao               PM.aquisicaoRenovacao
+POST    /pm/requisicoes/aquisicao               PM.salvarAnexo1
+
+GET     /ex/aquisicoes/pendentes                Exercito.aquisicoesPendentes
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -21,7 +24,7 @@ GET     /public/                                staticDir:public
 GET     /assets/                                staticDir:app/views/syrena/assets
 
 GET     /pm/assets/                             staticDir:app/views/syrena/assets
-GET     /pm/requisicoes/assets/                             staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/assets/                 staticDir:app/views/syrena/assets
 
 GET     /exercito/assets/                       staticDir:app/views/syrena/assets
 

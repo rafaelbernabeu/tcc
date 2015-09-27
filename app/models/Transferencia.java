@@ -1,7 +1,7 @@
 package models;
 
-import models.enums.TipoSituacao;
-import models.enums.StatusRequisicao;
+import models.enums.SituacaoRequerente;
+import models.enums.TipoParecer;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ public class Transferencia extends Model {
     public String cargoAlienante;
     public String unidadeLotacaoAlienante;
     public String enderecoAlienante;
-    public TipoSituacao situacaoAlienante;
+    public SituacaoRequerente situacaoAlienante;
 
     //adquirente
     public String catFuncionalAdquirente;
@@ -31,7 +31,7 @@ public class Transferencia extends Model {
     public String cargoAdquirente;
     public String unidadeLotacaoAdquirente;
     public String enderecoAdquirente;
-    public TipoSituacao situacaoAdquirente;
+    public SituacaoRequerente situacaoAdquirente;
 
     //armas ou municoes
     public String tipo;
@@ -46,6 +46,6 @@ public class Transferencia extends Model {
     public Date data;
     public String local;
 
-    public StatusRequisicao parecer = StatusRequisicao.AGUARDANDO;
+    public TipoParecer parecer;
     public String resposta;
 }

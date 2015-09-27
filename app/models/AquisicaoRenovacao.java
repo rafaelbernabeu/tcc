@@ -1,27 +1,27 @@
 package models;
 
-import models.enums.StatusRequisicao;
+import models.enums.TipoParecer;
 import models.enums.TipoRequisicao;
 import play.db.jpa.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Rafael on 23/09/2015.
  */
-@Entity
+@Entity(name = "aquisicao_renovacao")
 public class AquisicaoRenovacao extends Model {
 
-    public Integer nOrdem;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    public Long nOrdem;
     public TipoRequisicao requisicao;
 
+    //fornecedor
     public String fornecedor;
     public String localDeEntrega;
 
+    //requerente
     public String nomeRequerente;
     public String cargo;
     public String unidadeLotacao;
@@ -34,10 +34,12 @@ public class AquisicaoRenovacao extends Model {
     public String modelo;
     public String calibre;
 
+    public String observacao;
+
     public Date data;
     public String local;
 
-    public StatusRequisicao parecer = StatusRequisicao.AGUARDANDO;
+    public TipoParecer parecer;
     public String resposta;
 
 }

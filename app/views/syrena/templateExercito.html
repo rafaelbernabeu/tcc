@@ -66,10 +66,58 @@
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="@{Application.index}">
+                            <a href="#requisicoes">
+                                <i class="nav-item-caret"></i>
                                 <i class="nav-item-icon glyphicon glyphicon-pushpin"></i>
                                 Formulários
                             </a>
+                            <ul id="requisicoes" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Formulários
+                                    </a>
+                                </li><!-- /header layouts child -->
+                                <li class="side-nav-item">
+                                    <a href="#aquisicoes">
+                                        <i class="nav-item-caret"></i>
+                                        <i class="nav-item-icon icon glyphicon glyphicon-tag"></i>
+                                        Aquisições
+                                    </a>
+                                    <ul id="aquisicoes" class="side-nav-child">
+                                        <li class="side-nav-item-heading">
+                                            <a href="#" class="side-nav-back">
+                                                <i class="nav-item-caret"></i>
+                                                Aquisições
+                                            </a>
+                                        </li><!-- /header layouts child -->
+                                        <li class="side-nav-item">
+                                            <a href="@{Exercito.aquisicoesPendentes()}">
+                                                <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                Pendentes
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="">
+                                                <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                Favoráveis
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="">
+                                                <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                Desfavoráveis
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li><!-- /blank -->
+                                <li class="side-nav-item">
+                                    <a href="">
+                                        <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
+                                        Existentes
+                                    </a>
+                                </li>
+                            </ul><!-- /layouts child -->
                         </li>
                     </ul><!-- /nav ul-->
                 </nav>

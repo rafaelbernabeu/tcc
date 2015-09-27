@@ -3,11 +3,11 @@ package models.enums;
 /**
  * Created by Rafael on 26/09/2015.
  */
-public enum StatusRequisicao {
+public enum TipoParecer {
 
-    FAVORAVEL("Favorável"), DESFAVORAVEL("Desfavorável"), AGUARDANDO("Aguardando");
+    FAVORAVEL("Favorável"), DESFAVORAVEL("Desfavorável"), PENDENTE("Pendente");
 
-    StatusRequisicao(String descricao){
+    TipoParecer(String descricao){
         this.descricao = descricao;
     }
 
