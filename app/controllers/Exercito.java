@@ -34,18 +34,33 @@ public class Exercito extends Controller {
     }
 
     public static void aquisicoesPendentes() {
-        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecer", TipoParecer.PENDENTE).fetch();
-        System.out.println(aquisicoes.size());
+        List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.AQUISICAO, TipoParecer.PENDENTE).fetch();
+        render("/Exercito/aquisicoes.html", aquisicoes);
     }
 
-    public static void aquisicoes() {
-        List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.AQUISICAO).fetch();
-        render(aquisicoes);
+    public static void aquisicoesFavoraveis() {
+        List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.AQUISICAO, TipoParecer.FAVORAVEL).fetch();
+        render("/Exercito/aquisicoes.html", aquisicoes);
     }
 
-    public static void renovacoes() {
-        List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.RENOVACAO).fetch();
-        render(aquisicoes);
+    public static void aquisicoesDesfavoraveis() {
+        List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.AQUISICAO, TipoParecer.DESFAVORAVEL).fetch();
+        render("/Exercito/aquisicoes.html", aquisicoes);
+    }
+
+    public static void renovacoesPendentes() {
+        List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.PENDENTE).fetch();
+        render("/Exercito/renovacoes.html", renovacoes);
+    }
+
+    public static void renovacoesFavoraveis() {
+        List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.FAVORAVEL).fetch();
+        render("/Exercito/renovacoes.html", renovacoes);
+    }
+
+    public static void renovacoesDesfavoraveis() {
+        List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.DESFAVORAVEL).fetch();
+        render("/Exercito/renovacoes.html", renovacoes);
     }
 
 }

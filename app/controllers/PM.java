@@ -10,6 +10,7 @@ import play.mvc.Controller;
 import play.mvc.With;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Rafael on 17/09/2015.
@@ -34,15 +35,21 @@ public class PM extends Controller {
     }
 
     public static void aquisicao() {
-
         render("/PM/aquisicao.html");
-
     }
 
     public static void renovacao() {
-
         render("/PM/renovacao.html");
+    }
 
+    public static void existentesPendentes() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecer", TipoParecer.PENDENTE).fetch();
+        render("/PM/existentes.html", aquisicoes);
+    }
+
+    public static void existentesRespondidas() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecerNotEqual", TipoParecer.PENDENTE).fetch();
+        render("/PM/existentes.html", aquisicoes);
     }
 
     public static void salvarAnexo1(String fornecedor, String endereco, Long nordem,

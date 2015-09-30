@@ -81,7 +81,7 @@
                                 <li class="side-nav-item">
                                     <a href="#aquisicoes">
                                         <i class="nav-item-caret"></i>
-                                        <i class="nav-item-icon icon glyphicon glyphicon-tag"></i>
+                                        <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
                                         Aquisições
                                     </a>
                                     <ul id="aquisicoes" class="side-nav-child">
@@ -92,19 +92,19 @@
                                             </a>
                                         </li><!-- /header layouts child -->
                                         <li class="side-nav-item">
-                                            <a href="@{Exercito.aquisicoes()}">
+                                            <a href="@{Exercito.aquisicoesPendentes()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Pendentes
                                             </a>
                                         </li>
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{Exercito.aquisicoesFavoraveis()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Favoráveis
                                             </a>
                                         </li>
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{Exercito.aquisicoesDesfavoraveis()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Desfavoráveis
                                             </a>
@@ -112,12 +112,12 @@
                                     </ul>
                                 </li><!-- /blank -->
                                 <li class="side-nav-item">
-                                    <a href="#aquisicoes">
+                                    <a href="#renovacoes">
                                         <i class="nav-item-caret"></i>
-                                        <i class="nav-item-icon icon glyphicon glyphicon-tag"></i>
+                                        <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
                                         Renovações
                                     </a>
-                                    <ul id="aquisicoes" class="side-nav-child">
+                                    <ul id="renovacoes" class="side-nav-child">
                                         <li class="side-nav-item-heading">
                                             <a href="#" class="side-nav-back">
                                                 <i class="nav-item-caret"></i>
@@ -125,30 +125,24 @@
                                             </a>
                                         </li><!-- /header layouts child -->
                                         <li class="side-nav-item">
-                                            <a href="@{Exercito.renovacoes()}">
+                                            <a href="@{Exercito.renovacoesPendentes()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Pendentes
                                             </a>
                                         </li>
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{Exercito.renovacoesFavoraveis()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Favoráveis
                                             </a>
                                         </li>
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{Exercito.renovacoesDesfavoraveis()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Desfavoráveis
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li class="side-nav-item">
-                                    <a href="">
-                                        <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
-                                        Existentes
-                                    </a>
                                 </li>
                             </ul><!-- /layouts child -->
                         </li>

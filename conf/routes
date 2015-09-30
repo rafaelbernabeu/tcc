@@ -10,8 +10,15 @@ POST    /pm/requisicoes/aquisicao               PM.salvarAnexo1
 GET     /pm/requisicoes/renovacao               PM.renovacao
 POST    /pm/requisicoes/renovacao               PM.salvarAnexo2
 
-GET     /ex/aquisicoes/pendentes                Exercito.aquisicoes
-GET     /ex/renovacoes/pendentes                Exercito.renovacoes
+GET     /pm/requisicoes/existentes/pendentes    PM.existentesPendentes
+GET     /pm/requisicoes/existentes/respondidas  PM.existentesRespondidas
+
+GET     /ex/aquisicoes/pendentes                Exercito.aquisicoesPendentes
+GET     /ex/aquisicoes/favoraveis               Exercito.aquisicoesFavoraveis
+GET     /ex/aquisicoes/desfavoraveis            Exercito.aquisicoesDesfavoraveis
+GET     /ex/renovacoes/pendentes                Exercito.renovacoesPendentes
+GET     /ex/renovacoes/favoraveis               Exercito.renovacoesFavoraveis
+GET     /ex/renovacoes/desvaforaveis            Exercito.renovacoesDesfavoraveis
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -28,9 +35,10 @@ GET     /assets/                                staticDir:app/views/syrena/asset
 
 GET     /pm/assets/                             staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/assets/                 staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/existentes/assets/      staticDir:app/views/syrena/assets
 
-GET     /ex/renovacoes/assets/                       staticDir:app/views/syrena/assets
-GET     /ex/aquisicoes/assets/                       staticDir:app/views/syrena/assets
+GET     /ex/aquisicoes/assets/                  staticDir:app/views/syrena/assets
+GET     /ex/renovacoes/assets/                  staticDir:app/views/syrena/assets
 GET     /exercito/assets/                       staticDir:app/views/syrena/assets
 
 # Catch all
