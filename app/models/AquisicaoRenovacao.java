@@ -42,4 +42,8 @@ public class AquisicaoRenovacao extends Model {
     public TipoParecer parecer;
     public String resposta;
 
+    @Override
+    public String toString() {
+        return CPF;
+    }
 }

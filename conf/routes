@@ -5,10 +5,13 @@
 # Home page
 GET     /                                       Application.index
 
-GET     /pm/requisicoes/aquisicao               PM.aquisicaoRenovacao
+GET     /pm/requisicoes/aquisicao               PM.aquisicao
 POST    /pm/requisicoes/aquisicao               PM.salvarAnexo1
+GET     /pm/requisicoes/renovacao               PM.renovacao
+POST    /pm/requisicoes/renovacao               PM.salvarAnexo2
 
-GET     /ex/aquisicoes/pendentes                Exercito.aquisicoesPendentes
+GET     /ex/aquisicoes/pendentes                Exercito.aquisicoes
+GET     /ex/renovacoes/pendentes                Exercito.renovacoes
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -26,6 +29,8 @@ GET     /assets/                                staticDir:app/views/syrena/asset
 GET     /pm/assets/                             staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/assets/                 staticDir:app/views/syrena/assets
 
+GET     /ex/renovacoes/assets/                       staticDir:app/views/syrena/assets
+GET     /ex/aquisicoes/assets/                       staticDir:app/views/syrena/assets
 GET     /exercito/assets/                       staticDir:app/views/syrena/assets
 
 # Catch all

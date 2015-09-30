@@ -33,9 +33,15 @@ public class PM extends Controller {
         render();
     }
 
-    public static void aquisicaoRenovacao() {
+    public static void aquisicao() {
 
-        render("/PM/aquisicaoRenovacao.html");
+        render("/PM/aquisicao.html");
+
+    }
+
+    public static void renovacao() {
+
+        render("/PM/renovacao.html");
 
     }
 
@@ -63,7 +69,35 @@ public class PM extends Controller {
 
         anexo1.save();
 
-        render("/PM/aquisicaoRenovacao.html");
+        render("/PM/aquisicao.html");
+
+    }
+
+    public static void salvarAnexo2(String fornecedor, String endereco, Long nordem,
+                                    String requerente, String cargo, String lotacao, String cpf, String quantidade,
+                                    String tipo, String marca, String modelo, String calibre, String observacao) {
+
+        AquisicaoRenovacao anexo1 = new AquisicaoRenovacao();
+        anexo1.requisicao = TipoRequisicao.RENOVACAO;
+        anexo1.parecer = TipoParecer.PENDENTE;
+        anexo1.fornecedor = fornecedor;
+        anexo1.localDeEntrega = endereco;
+        anexo1.nOrdem = nordem;
+        anexo1.nomeRequerente = requerente;
+        anexo1.cargo = cargo;
+        anexo1.unidadeLotacao = lotacao;
+        anexo1.CPF = cpf;
+        anexo1.quantidade = quantidade;
+        anexo1.tipo = tipo;
+        anexo1.marca = marca;
+        anexo1.modelo = modelo;
+        anexo1.calibre = calibre;
+        anexo1.observacao = observacao;
+        anexo1.data = new Date();
+
+        anexo1.save();
+
+        render("/PM/renovacao.html");
 
     }
 
