@@ -9,6 +9,10 @@ import models.AquisicaoRenovacao;
 public class AquisicoesRenovacoes extends CRUD {
 
     public static void edit(Long id) {
-        renderJSON(id);
+        render("/AquisicoesRenovacoes/editar.html");
+    }
+
+    public static void salvar() {
+
     }
 }

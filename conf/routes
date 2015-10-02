@@ -5,6 +5,7 @@
 # Home page
 GET     /                                       Application.index
 
+GET     /pm/home                                PM.index
 GET     /pm/requisicoes/aquisicao               PM.aquisicao
 POST    /pm/requisicoes/aquisicao               PM.salvarAnexo1
 GET     /pm/requisicoes/renovacao               PM.renovacao
@@ -13,6 +14,8 @@ POST    /pm/requisicoes/renovacao               PM.salvarAnexo2
 GET     /pm/requisicoes/existentes/pendentes    PM.existentesPendentes
 GET     /pm/requisicoes/existentes/respondidas  PM.existentesRespondidas
 
+
+GET     /ex/home                                Exercito.index
 GET     /ex/aquisicoes/pendentes                Exercito.aquisicoesPendentes
 GET     /ex/aquisicoes/favoraveis               Exercito.aquisicoesFavoraveis
 GET     /ex/aquisicoes/desfavoraveis            Exercito.aquisicoesDesfavoraveis
@@ -21,6 +24,8 @@ GET     /ex/renovacoes/favoraveis               Exercito.renovacoesFavoraveis
 GET     /ex/renovacoes/desvaforaveis            Exercito.renovacoesDesfavoraveis
 
 GET     /ex/aquisicoes/editar/{id}              AquisicoesRenovacoes.edit
+POST    /ex/formularios/editar                  AquisicoesRenovacoes.edit
+POST    /ex/formularios/salvar                  AquisicoesRenovacoes.salvar
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -39,9 +44,10 @@ GET     /pm/assets/                             staticDir:app/views/syrena/asset
 GET     /pm/requisicoes/assets/                 staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/existentes/assets/      staticDir:app/views/syrena/assets
 
+GET     /ex/assets/                             staticDir:app/views/syrena/assets
 GET     /ex/aquisicoes/assets/                  staticDir:app/views/syrena/assets
 GET     /ex/renovacoes/assets/                  staticDir:app/views/syrena/assets
-GET     /exercito/assets/                       staticDir:app/views/syrena/assets
+GET     /ex/formularios/assets/                 staticDir:app/views/syrena/assets
 
 # Catch all
-*       /{controller}/{action}                  {controller}.{action}
+#*       /{controller}/{action}                  {controller}.{action}
