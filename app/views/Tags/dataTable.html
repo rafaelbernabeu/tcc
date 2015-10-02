@@ -26,6 +26,7 @@
                     <th>CPF</th>
                     <th>Observacoes</th>
                     <th>Parecer</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,11 @@
                     <td>${aquisicao.CPF}</td>
                     <td>${aquisicao.observacao}</td>
                     <td>${aquisicao.parecer}</td>
+                    <td class="center">
+                        #{form @AquisicoesRenovacoes.edit(), method:'POST', enctype:'multipart/form-data'}
+                            <button type="submit" class="btn btn-default btn-xs" name="id" value="${aquisicao.id}">Edit</button>
+                        #{/form}
+                    </td>
                 </tr>
                 #{/list}
                 </tbody>
