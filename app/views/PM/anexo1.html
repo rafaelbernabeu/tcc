@@ -9,6 +9,7 @@
 
 #{form @PM.salvarAnexo1(), method:'POST', enctype:'multipart/form-data'}
 
+    <input type="hidden" name="id" value="${entity.id}"/>
     <div class="magic-layout isotope" style="position: relative; overflow: hidden; height: 3865px;">
         <div class="box magic-element width-full isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
             <form class="form-horizontal" role="form">
@@ -19,11 +20,11 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="input1">Fornecedor</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input1" placeholder="Fornecedor" name="fornecedor">
+                            <input type="text" class="form-control" id="input1" placeholder="Fornecedor" name="fornecedor" value="${entity.fornecedor}">
                         </div>
                         <label class="col-sm-2 control-label" for="input2">Endereço</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input2" placeholder="Local de Entrega" name="endereco">
+                            <input type="text" class="form-control" id="input2" placeholder="Local de Entrega" name="endereco" value="${entity.localDeEntrega}">
                         </div>
                     </div>
                 </fieldset>
@@ -35,25 +36,34 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="input3">Número de Ordem</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="input3" placeholder="Número de Ordem" name="nordem">
+                            <input type="number" class="form-control" id="input3" placeholder="Número de Ordem" name="nordem" value="${entity.nOrdem}">
                         </div>
                         <label class="col-sm-2 control-label" for="input4">Requerente</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input4" placeholder="Nome completo do requerente" name="requerente">
+                            <input type="text" class="form-control" id="input4" placeholder="Nome completo do requerente" name="requerente" value="${entity.nomeRequerente}">
                         </div>
                         <label class="col-sm-2 control-label" for="input5">Cargo ou Posto</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input5" placeholder="Cargo, Posto ou Graduação" name="cargo">
+                            <input type="text" class="form-control" id="input5" placeholder="Cargo, Posto ou Graduação" name="cargo" value="${entity.cargo}">
                         </div>
                         <label class="col-sm-2 control-label" for="input6">Unidade de Lotação</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input6" placeholder="Unidade de Lotação" name="lotacao">
+                            <input type="text" class="form-control" id="input6" placeholder="Unidade de Lotação" name="lotacao" value="${entity.unidadeLotacao}">
                         </div>
                         <label class="col-sm-2 control-label" for="input7">CPF</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input7" placeholder="CPF" name="cpf" data-mask="999.999.999-99">
+                            <input type="text" class="form-control" id="input7" placeholder="CPF" name="cpf" data-mask="999.999.999-99" value="${entity.CPF}">
                         </div>
                     </div><!-- /form-group -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="inputSelect">Tipo Requisição</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="inputSelect" name="requisicao">
+                                <option #{if entity.requisicao.getDescricao().equals("Aquisição")}selected #{/if} value="AQUISICAO">Aquisição</option>
+                                <option #{if entity.requisicao.getDescricao().equals("Renovação")}selected #{/if} value="RENOVACAO">Renovação</option>
+                            </select>
+                        </div>
+                    </div>
                 </fieldset>
                 <br/>
                 <h2 class="box-heading">
@@ -63,23 +73,23 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="input8">Quantidade</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input8" placeholder="Quantidade" name="quantidade">
+                            <input type="text" class="form-control" id="input8" placeholder="Quantidade" name="quantidade" value="${entity.quantidade}">
                         </div>
                         <label class="col-sm-2 control-label" for="input9">Tipo</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input9" placeholder="Tipo" name="tipo">
+                            <input type="text" class="form-control" id="input9" placeholder="Tipo" name="tipo" value="${entity.tipo}">
                         </div>
                         <label class="col-sm-2 control-label" for="input10">Marca</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input10" placeholder="Marca" name="marca">
+                            <input type="text" class="form-control" id="input10" placeholder="Marca" name="marca" value="${entity.marca}">
                         </div>
                         <label class="col-sm-2 control-label" for="input11">Modelo</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input11" placeholder="Modelo" name="modelo">
+                            <input type="text" class="form-control" id="input11" placeholder="Modelo" name="modelo" value="${entity.modelo}">
                         </div>
                         <label class="col-sm-2 control-label" for="input12">Calibre</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input12" placeholder="Calibre" name="calibre">
+                            <input type="text" class="form-control" id="input12" placeholder="Calibre" name="calibre" value="${entity.calibre}">
                         </div>
                     </div><!-- /form-group -->
                 </fieldset>
@@ -91,7 +101,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="inputTextarea">Observações</label>
                         <div class="col-sm-10">
-                            <textarea rows="3" class="form-control" id="inputTextarea" placeholder="Observações" name="observacao"></textarea>
+                            <textarea rows="3" class="form-control" id="inputTextarea" placeholder="Observações" name="observacao">${entity.observacao}</textarea>
                         </div>
                     </div>
                 </fieldset>

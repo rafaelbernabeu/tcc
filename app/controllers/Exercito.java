@@ -5,6 +5,7 @@ import models.enums.TipoParecer;
 import models.enums.TipoLogin;
 import models.Usuario;
 import models.enums.TipoRequisicao;
+import play.data.validation.Required;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
@@ -33,6 +34,52 @@ public class Exercito extends Controller {
         render();
     }
 
+    //Seleciona para edicao
+    public static void editar(Long id) {
+        AquisicaoRenovacao entity = AquisicaoRenovacao.findById(id);
+        render("/Exercito/editarAnexo1.html", entity);
+    }
+
+    //Salva alteracoes anexo1
+    public static void salvarAnexo1(String id, String parecer, String resposta) {
+
+        AquisicaoRenovacao anexo = AquisicaoRenovacao.findById(Long.valueOf(id));
+        anexo.parecer = TipoParecer.valueOf(parecer);
+        anexo.resposta = resposta;
+        anexo.save();
+
+        switch (anexo.requisicao) {
+            case AQUISICAO:
+                switch (anexo.parecer) {
+                    case FAVORAVEL:
+                        aquisicoesFavoraveis();
+                        break;
+                    case DESFAVORAVEL:
+                        aquisicoesDesfavoraveis();
+                        break;
+                    case PENDENTE:
+                        aquisicoesPendentes();
+                        break;
+                }
+                break;
+            case RENOVACAO:
+                switch (anexo.parecer) {
+                    case FAVORAVEL:
+                        renovacoesFavoraveis();
+                        break;
+                    case DESFAVORAVEL:
+                        renovacoesDesfavoraveis();
+                        break;
+                    case PENDENTE:
+                        renovacoesPendentes();
+                        break;
+                }
+                break;
+            default:
+                Exercito.index();
+        }
+    }
+
     public static void aquisicoesPendentes() {
         List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.AQUISICAO, TipoParecer.PENDENTE).fetch();
         render("/Exercito/aquisicoes.html", aquisicoes);
@@ -48,6 +95,11 @@ public class Exercito extends Controller {
         render("/Exercito/aquisicoes.html", aquisicoes);
     }
 
+    public static void todasAquisicoes() {
+        List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.AQUISICAO).fetch();
+        render("/Exercito/aquisicoes.html", aquisicoes);
+    }
+
     public static void renovacoesPendentes() {
         List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.PENDENTE).fetch();
         render("/Exercito/renovacoes.html", renovacoes);
@@ -60,6 +112,11 @@ public class Exercito extends Controller {
 
     public static void renovacoesDesfavoraveis() {
         List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.DESFAVORAVEL).fetch();
+        render("/Exercito/renovacoes.html", renovacoes);
+    }
+
+    public static void todasRenovacoes() {
+        List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.RENOVACAO).fetch();
         render("/Exercito/renovacoes.html", renovacoes);
     }
 

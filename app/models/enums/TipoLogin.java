@@ -5,7 +5,7 @@ package models.enums;
  */
 public enum TipoLogin {
 
-    EXERCITO("Exercito"), POLICIAMILITAR("Policia Militar"), ADMIN("Administrador");
+    EXERCITO("Exército"), POLICIAMILITAR("Polícia Militar"), ADMIN("Administrador");
 
     TipoLogin(String descricao){
         this.descricao = descricao;

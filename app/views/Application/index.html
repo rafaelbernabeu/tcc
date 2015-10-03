@@ -6,8 +6,11 @@
 Faça Login.
 <br/><br/>
 
-<a href="@{Exercito.index}">Exército</a><br/>
-<a href="@{PM.index}">Polícia Militar</a>
+#{secure.check 'Administrador'}
+    <a href="@{Exercito.index}">Exército</a><br/>
+    <a href="@{PM.index}">Polícia Militar</a><br/>
+    <a href="@{PM.index}">Admin</a>
+#{/secure.check}
 
 #{set 'moreStyles'}
 

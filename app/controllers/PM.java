@@ -34,14 +34,20 @@ public class PM extends Controller {
         render();
     }
 
+    //Cria nova aquisicao
     public static void aquisicao() {
-        render("/PM/aquisicao.html");
+        AquisicaoRenovacao entity = new AquisicaoRenovacao();
+        entity.requisicao = TipoRequisicao.AQUISICAO;
+        render("/PM/anexo1.html", entity);
     }
-
+    //Cria nova renovacao
     public static void renovacao() {
-        render("/PM/renovacao.html");
+        AquisicaoRenovacao entity = new AquisicaoRenovacao();
+        entity.requisicao = TipoRequisicao.RENOVACAO;
+        render("/PM/anexo1.html", entity);
     }
 
+    //Lista as requisicoes
     public static void existentesPendentes() {
         List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecer", TipoParecer.PENDENTE).fetch();
         render("/PM/existentes.html", aquisicoes);
@@ -52,12 +58,24 @@ public class PM extends Controller {
         render("/PM/existentes.html", aquisicoes);
     }
 
-    public static void salvarAnexo1(String fornecedor, String endereco, Long nordem,
-                                          String requerente, String cargo, String lotacao, String cpf, String quantidade,
-                                          String tipo, String marca, String modelo, String calibre, String observacao) {
+    //Seleciona uma requisicao para ser editada
+    public static void editar(Long id) {
+        AquisicaoRenovacao entity = AquisicaoRenovacao.findById(id);
+        render("/PM/anexo1.html", entity);
+    }
 
-        AquisicaoRenovacao anexo1 = new AquisicaoRenovacao();
-        anexo1.requisicao = TipoRequisicao.AQUISICAO;
+    public static void excluir(Long id) {
+        AquisicaoRenovacao entity = AquisicaoRenovacao.findById(id);
+        entity.delete();
+        existentesPendentes();
+    }
+
+    public static void salvarAnexo1(String id, String fornecedor, String endereco, Long nordem,
+                                          String requerente, String cargo, String lotacao, String cpf, String quantidade,
+                                          String tipo, String marca, String modelo, String calibre, String observacao, String requisicao) {
+
+        AquisicaoRenovacao anexo1 = id != null && !id.equals("") ? (AquisicaoRenovacao)AquisicaoRenovacao.findById(Long.valueOf(id)) : new AquisicaoRenovacao();
+        anexo1.requisicao = TipoRequisicao.valueOf(requisicao);
         anexo1.parecer = TipoParecer.PENDENTE;
         anexo1.fornecedor = fornecedor;
         anexo1.localDeEntrega = endereco;
@@ -76,11 +94,11 @@ public class PM extends Controller {
 
         anexo1.save();
 
-        render("/PM/aquisicao.html");
+        PM.index();
 
     }
 
-    public static void salvarAnexo2(String fornecedor, String endereco, Long nordem,
+    public static void salvarAnexo1b(String fornecedor, String endereco, Long nordem,
                                     String requerente, String cargo, String lotacao, String cpf, String quantidade,
                                     String tipo, String marca, String modelo, String calibre, String observacao) {
 
@@ -107,5 +125,34 @@ public class PM extends Controller {
         render("/PM/renovacao.html");
 
     }
+
+    public static void editarAnexo1(String id, String fornecedor, String endereco, Long nordem,
+                                    String requerente, String cargo, String lotacao, String cpf, String quantidade,
+                                    String tipo, String marca, String modelo, String calibre, String observacao) {
+
+        AquisicaoRenovacao anexo1 = AquisicaoRenovacao.findById(Long.valueOf(id));
+        anexo1.requisicao = TipoRequisicao.AQUISICAO;
+        anexo1.parecer = TipoParecer.PENDENTE;
+        anexo1.fornecedor = fornecedor;
+        anexo1.localDeEntrega = endereco;
+        anexo1.nOrdem = nordem;
+        anexo1.nomeRequerente = requerente;
+        anexo1.cargo = cargo;
+        anexo1.unidadeLotacao = lotacao;
+        anexo1.CPF = cpf;
+        anexo1.quantidade = quantidade;
+        anexo1.tipo = tipo;
+        anexo1.marca = marca;
+        anexo1.modelo = modelo;
+        anexo1.calibre = calibre;
+        anexo1.observacao = observacao;
+        anexo1.data = new Date();
+
+        anexo1.save();
+
+        render("/PM/anexo1.html");
+
+    }
+
 
 }

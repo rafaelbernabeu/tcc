@@ -6,10 +6,12 @@
 GET     /                                       Application.index
 
 GET     /pm/home                                PM.index
-GET     /pm/requisicoes/aquisicao               PM.aquisicao
-POST    /pm/requisicoes/aquisicao               PM.salvarAnexo1
-GET     /pm/requisicoes/renovacao               PM.renovacao
-POST    /pm/requisicoes/renovacao               PM.salvarAnexo2
+POST    /pm/requisicoes/editar                  PM.editar
+POST    /pm/requisicoes/excluir                 PM.excluir
+GET     /pm/requisicoes/aquisicao/nova          PM.aquisicao
+POST    /pm/requisicoes/aquisicao/salvar        PM.salvarAnexo1
+GET     /pm/requisicoes/renovacao/nova          PM.renovacao
+POST    /pm/requisicoes/renovacao/salvar        PM.salvarAnexo1
 
 GET     /pm/requisicoes/existentes/pendentes    PM.existentesPendentes
 GET     /pm/requisicoes/existentes/respondidas  PM.existentesRespondidas
@@ -19,13 +21,14 @@ GET     /ex/home                                Exercito.index
 GET     /ex/aquisicoes/pendentes                Exercito.aquisicoesPendentes
 GET     /ex/aquisicoes/favoraveis               Exercito.aquisicoesFavoraveis
 GET     /ex/aquisicoes/desfavoraveis            Exercito.aquisicoesDesfavoraveis
+GET     /ex/aquisicoes/todas                    Exercito.todasAquisicoes
 GET     /ex/renovacoes/pendentes                Exercito.renovacoesPendentes
 GET     /ex/renovacoes/favoraveis               Exercito.renovacoesFavoraveis
 GET     /ex/renovacoes/desvaforaveis            Exercito.renovacoesDesfavoraveis
+GET     /ex/renovacoes/todas                    Exercito.todasRenovacoes
 
-GET     /ex/aquisicoes/editar/{id}              AquisicoesRenovacoes.edit
-POST    /ex/formularios/editar                  AquisicoesRenovacoes.edit
-POST    /ex/formularios/salvar                  AquisicoesRenovacoes.salvar
+POST    /ex/aquisicoes/editar                   Exercito.editar
+POST    /ex/formularios/salvar                  Exercito.salvarAnexo1
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -42,6 +45,8 @@ GET     /assets/                                staticDir:app/views/syrena/asset
 
 GET     /pm/assets/                             staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/assets/                 staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/aquisicao/assets/       staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/renovacao/assets/       staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/existentes/assets/      staticDir:app/views/syrena/assets
 
 GET     /ex/assets/                             staticDir:app/views/syrena/assets
