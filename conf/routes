@@ -6,16 +6,27 @@
 GET     /                                       Application.index
 
 GET     /pm/home                                PM.index
-POST    /pm/requisicoes/editar                  PM.editar
-POST    /pm/requisicoes/excluir                 PM.excluir
+
 GET     /pm/requisicoes/aquisicao/nova          PM.aquisicao
 POST    /pm/requisicoes/aquisicao/salvar        PM.salvarAnexo1
+
 GET     /pm/requisicoes/renovacao/nova          PM.renovacao
 POST    /pm/requisicoes/renovacao/salvar        PM.salvarAnexo1
 
-GET     /pm/requisicoes/existentes/pendentes    PM.existentesPendentes
-GET     /pm/requisicoes/existentes/respondidas  PM.existentesRespondidas
+GET     /pm/requisicoes/transferencia/nova      PM.transferencia
+POST    /pm/requisicoes/transferencia/salvar    PM.salvarAnexo2
 
+GET     /pm/requisicoes/anexo1/pendentes        PM.anexo1Pendentes
+GET     /pm/requisicoes/anexo1/respondidas      PM.anexo1Respondidas
+
+GET     /pm/requisicoes/anexo2/pendentes        PM.anexo2Pendentes
+GET     /pm/requisicoes/anexo2/respondidas      PM.anexo2Respondidas
+
+POST    /pm/requisicoes/anexo1/editar           PM.editarAnexo1
+POST    /pm/requisicoes/anexo1/excluir          PM.excluirAnexo1
+
+POST    /pm/requisicoes/anexo2/editar           PM.editarAnexo2
+POST    /pm/requisicoes/anexo2/excluir          PM.excluirAnexo2
 
 GET     /ex/home                                Exercito.index
 GET     /ex/aquisicoes/pendentes                Exercito.aquisicoesPendentes
@@ -27,8 +38,11 @@ GET     /ex/renovacoes/favoraveis               Exercito.renovacoesFavoraveis
 GET     /ex/renovacoes/desvaforaveis            Exercito.renovacoesDesfavoraveis
 GET     /ex/renovacoes/todas                    Exercito.todasRenovacoes
 
-POST    /ex/aquisicoes/editar                   Exercito.editar
-POST    /ex/formularios/salvar                  Exercito.salvarAnexo1
+POST    /ex/anexo1/editar                       Exercito.editarAnexo1
+POST    /ex/anexo1/salvar                       Exercito.salvarAnexo1
+
+POST    /ex/anexo2/editar                       Exercito.editarAnexo2
+POST    /ex/anexo2/salvar                       Exercito.salvarAnexo2
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -48,6 +62,10 @@ GET     /pm/requisicoes/assets/                 staticDir:app/views/syrena/asset
 GET     /pm/requisicoes/aquisicao/assets/       staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/renovacao/assets/       staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/existentes/assets/      staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/transferencia/assets/   staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/anexo1/assets/          staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/anexo2/assets/          staticDir:app/views/syrena/assets
+
 
 GET     /ex/assets/                             staticDir:app/views/syrena/assets
 GET     /ex/aquisicoes/assets/                  staticDir:app/views/syrena/assets

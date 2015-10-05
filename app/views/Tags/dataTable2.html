@@ -22,36 +22,40 @@
             <table class="table table-hover datatables">
                 <thead>
                 <tr>
-                    <th>Nome do Requerente</th>
+                    <th>Alienante</th>
                     <th>CPF</th>
-                    <th>Unidade de Lotação</th>
+                    <th>Adquirente</th>
+                    <th>CPF</th>
                     <th>Observacoes</th>
                     <th>Parecer</th>
+                    <th>Resposta</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                #{list items:_aquisicoes, as:'aquisicao'}
+                #{list items:_transferencias, as:'transferencia'}
                 <tr class="gradeA">
-                    <td>${aquisicao.nomeRequerente}</td>
-                    <td>${aquisicao.CPF}</td>
-                    <td>${aquisicao.unidadeLotacao}</td>
-                    <td>${aquisicao.observacao}</td>
-                    <td>${aquisicao.parecer}</td>
+                    <td>${transferencia.nomeAlienante}</td>
+                    <td>${transferencia.CPFAlienante}</td>
+                    <td>${transferencia.nomeAdquirente}</td>
+                    <td>${transferencia.CPFAdquirente}</td>
+                    <td>${transferencia.observacao}</td>
+                    <td>${transferencia.parecer}</td>
+                    <td>${transferencia.resposta}</td>
                     <td class="center">
-                        #{secure.check 'Exército','Administrador'}
-                            #{form @Exercito.editar(), method:'POST', enctype:'multipart/form-data'}
-                                <button type="submit" class="btn btn-default btn-xs" name="id" value="${aquisicao.id}">Parecer</button>
-                            #{/form}
-                        #{/secure.check}
-                        #{secure.check 'Polícia Militar'}
-                            #{form @PM.editar(), method:'POST', enctype:'multipart/form-data'}
-                                <button type="submit" class="btn btn-default btn-xs" name="id" value="${aquisicao.id}">Editar</button>
+                        #{secure.check 'Administrador'}
+                            #{form @Exercito.editarAnexo2(), method:'POST', enctype:'multipart/form-data'}
+                                <button type="submit" class="btn btn-default btn-xs" name="id" value="${transferencia.id}">Parecer</button>
                             #{/form}
                         #{/secure.check}
                         #{secure.check 'Administrador'}
-                            #{form @PM.excluir(), method:'POST', enctype:'multipart/form-data'}
-                            <button type="submit" class="btn btn-default btn-xs" name="id" value="${aquisicao.id}">Excluir</button>
+                            #{form @PM.editarAnexo2(), method:'POST', enctype:'multipart/form-data'}
+                                <button type="submit" class="btn btn-default btn-xs" name="id" value="${transferencia.id}">Editar</button>
+                            #{/form}
+                        #{/secure.check}
+                        #{secure.check 'Administrador'}
+                            #{form @PM.excluirAnexo2(), method:'POST', enctype:'multipart/form-data'}
+                            <button type="submit" class="btn btn-default btn-xs" name="id" value="${transferencia.id}">Excluir</button>
                             #{/form}
                         #{/secure.check}
                     </td>

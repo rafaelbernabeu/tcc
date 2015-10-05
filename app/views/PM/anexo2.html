@@ -1,0 +1,194 @@
+#{extends '/syrena/templatePM.html' /}
+#{set title:'Formulário de Transferência' /}
+
+#{set 'moreStyles'}
+<style type="text/css" rel="stylesheet">
+
+</style>
+#{/set}
+
+#{form @PM.salvarAnexo2(), method:'POST', enctype:'multipart/form-data'}
+
+    <input type="hidden" name="id" value="${entity.id}"/>
+    <div class="magic-layout isotope" style="position: relative; overflow: hidden; height: 3865px;">
+        <div class="box magic-element width-full isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+            <form class="form-horizontal" role="form">
+                <h2 class="box-heading">
+                    Identificação do Alienante
+                </h2>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input1">Categoria Funcional</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input1" placeholder="Categoria Funcional" name="funcionalAlienante" value="${entity.funcionalAlienante}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input2">Nome</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input2" placeholder="Nome" name="nomeAlienante" value="${entity.nomeAlienante}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input3">Identidade</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input3" placeholder="Identidade" name="identidadeAlienante" value="${entity.identidadeAlienante}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input4">CPF</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input4" placeholder="CPF" data-mask="999.999.999-99" name="CPFAlienante" value="${entity.CPFAlienante}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input5">Cargo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input5" placeholder="Cargo" name="cargoAlienante" value="${entity.cargoAlienante}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input6">Unidade de Lotação</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input6" placeholder="Unidade de Lotação" name="unidadeLotacaoAlienante" value="${entity.unidadeLotacaoAlienante}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input7">Endereço</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input7" placeholder="Endereço" name="enderecoAlienante" value="${entity.enderecoAlienante}">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Situação</label>
+                            <div class="col-sm-10">
+                                <div class="radio">
+                                    <label>
+                                        <input name="situacaoAlienante" id="optionsRadios4" type="radio" value="ATIVA" #{if entity.situacaoAlienante.getDescricao().equals("Ativa")}checked #{/if} >
+                                        Ativa
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input name="situacaoAlienante" id="optionsRadios5" type="radio" value="INATIVO" #{if entity.situacaoAlienante.getDescricao().equals("Inativo")}checked #{/if} >
+                                        Inativo
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input name="situacaoAlienante" id="optionsRadios6" type="radio" value="REFORMADO" #{if entity.situacaoAlienante.getDescricao().equals("Reformado")}checked #{/if} >
+                                        Reformado
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+                <br/>
+                <h2 class="box-heading">
+                    Identificação do Adquirente
+                </h2>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input8">Categoria Funcional</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input8" placeholder="Categoria Funcional" name="funcionalAdquirente" value="${entity.funcionalAdquirente}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input9">Nome</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input9" placeholder="Nome" name="nomeAdquirente" value="${entity.nomeAdquirente}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input10">Identidade</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input10" placeholder="Identidade" name="identidadeAdquirente" value="${entity.identidadeAdquirente}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input11">CPF</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input11" placeholder="CPF" data-mask="999.999.999-99" name="CPFAdquirente" value="${entity.CPFAdquirente}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input12">Cargo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input12" placeholder="Cargo" name="cargoAdquirente" value="${entity.cargoAdquirente}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input13">Unidade de Lotação</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input13" placeholder="Unidade de Lotação" name="unidadeLotacaoAdquirente" value="${entity.unidadeLotacaoAdquirente}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input14">Endereço</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input14" placeholder="Endereço" name="enderecoAdquirente" value="${entity.enderecoAdquirente}">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Situação</label>
+                            <div class="col-sm-10">
+                                <div class="radio">
+                                    <label>
+                                        <input name="situacaoAdquirente" id="optionsRadios1" type="radio" value="ATIVA" #{if entity.situacaoAdquirente.getDescricao().equals("Ativa")}checked #{/if} >
+                                        Ativa
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input name="situacaoAdquirente" id="optionsRadios2" type="radio" value="INATIVO" #{if entity.situacaoAdquirente.getDescricao().equals("Inativo")}checked #{/if} >
+                                        Inativo
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input name="situacaoAdquirente" id="optionsRadios3" type="radio" value="REFORMADO" #{if entity.situacaoAdquirente.getDescricao().equals("Reformado")}checked #{/if} >
+                                        Reformado
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <br/>
+                <h2 class="box-heading">
+                    Armas ou Munições
+                </h2>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input15">Tipo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input15" placeholder="Tipo" name="tipo" value="${entity.tipo}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input16">Marca</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input16" placeholder="Marca" name="marca" value="${entity.marca}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input17">Modelo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input17" placeholder="Modelo" name="modelo" value="${entity.modelo}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input18">Calibre</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input18" placeholder="Calibre" name="calibre" value="${entity.calibre}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input19">Número de série</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input19" placeholder="Número de série" name="quantidade" value="${entity.nSerie}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input20">Nº SIGMA/SINARM</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input20" placeholder="SIGMA/SINARM" name="quantidade" value="${entity.sigmaSinarm}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input21">Especificações</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input21" placeholder="Outras Especificações" name="quantidade" value="${entity.especificacoes}">
+                        </div>
+                        <label class="col-sm-2 control-label" for="input22">Acessórios</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input22" placeholder="Acessórios eou sobressalentes " name="quantidade" value="${entity.acessorios}">
+                        </div>
+                    </div><!-- /form-group -->
+                </fieldset>
+                <br/>
+                <h2 class="box-heading">
+                    Observações
+                </h2>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="inputTextarea">Observações</label>
+                        <div class="col-sm-10">
+                            <textarea rows="3" class="form-control" id="inputTextarea" placeholder="Observações" name="observacao">${entity.observacao}</textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <br/>
+                <input class="btn btn btn-primary" type="submit" name="submit" value="Salvar">
+            </form><!-- /form -->
+        </div><!-- /box -->
+    </div>
+
+
+#{/form}

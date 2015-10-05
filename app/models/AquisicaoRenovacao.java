@@ -13,6 +13,10 @@ import java.util.Date;
 @Entity(name = "aquisicao_renovacao")
 public class AquisicaoRenovacao extends Model {
 
+    public AquisicaoRenovacao(){
+        this.parecer = TipoParecer.PENDENTE;
+    }
+
     //@GeneratedValue(strategy = GenerationType.AUTO)
     public Long nOrdem;
     public TipoRequisicao requisicao;

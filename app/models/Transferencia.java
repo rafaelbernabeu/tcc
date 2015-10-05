@@ -13,6 +13,13 @@ import java.util.Date;
 @Entity
 public class Transferencia extends Model {
 
+    public Transferencia() {
+
+        this.parecer = TipoParecer.PENDENTE;
+        this.situacaoAlienante = SituacaoRequerente.INATIVO;
+        this.situacaoAdquirente = SituacaoRequerente.INATIVO;
+    }
+
     //alienante
     public String funcionalAlienante;
     public String nomeAlienante;
@@ -24,7 +31,7 @@ public class Transferencia extends Model {
     public SituacaoRequerente situacaoAlienante;
 
     //adquirente
-    public String catFuncionalAdquirente;
+    public String funcionalAdquirente;
     public String nomeAdquirente;
     public String identidadeAdquirente;
     public String CPFAdquirente;
@@ -42,6 +49,8 @@ public class Transferencia extends Model {
     public String sigmaSinarm;
     public String especificacoes;
     public String acessorios;
+
+    public String observacao;
 
     public Date data;
     public String local;

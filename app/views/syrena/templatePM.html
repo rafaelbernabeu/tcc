@@ -104,7 +104,7 @@
                                             </a>
                                         </li>
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{PM.transferencia()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Anexo II - Transferência
                                             </a>
@@ -125,17 +125,59 @@
                                             </a>
                                         </li><!-- /header layouts child -->
                                         <li class="side-nav-item">
-                                            <a href="@{PM.existentesPendentes()}">
-                                                <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
-                                                Pendentes
+                                            <a href="#anexo1">
+                                                <i class="nav-item-caret"></i>
+                                                <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
+                                                Anexo I
                                             </a>
-                                        </li>
+                                            <ul id="anexo1" class="side-nav-child">
+                                                <li class="side-nav-item-heading">
+                                                    <a href="#" class="side-nav-back">
+                                                        <i class="nav-item-caret"></i>
+                                                        Anexo I
+                                                    </a>
+                                                </li><!-- /header layouts child -->
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.anexo1Pendentes()}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Pendentes
+                                                    </a>
+                                                </li>
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.anexo1Respondidas()}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Respondidas
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li><!-- /blank -->
                                         <li class="side-nav-item">
-                                            <a href="@{PM.existentesRespondidas()}">
-                                                <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
-                                                Respondidas
+                                            <a href="#anexo2">
+                                                <i class="nav-item-caret"></i>
+                                                <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
+                                                Anexo II
                                             </a>
-                                        </li>
+                                            <ul id="anexo2" class="side-nav-child">
+                                                <li class="side-nav-item-heading">
+                                                    <a href="#" class="side-nav-back">
+                                                        <i class="nav-item-caret"></i>
+                                                        Anexo II
+                                                    </a>
+                                                </li><!-- /header layouts child -->
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.anexo2Pendentes()}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Pendentes
+                                                    </a>
+                                                </li>
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.anexo2Respondidas()}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Respondidas
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li><!-- /blank -->
                                     </ul>
                                 </li><!-- /blank -->
                             </ul><!-- /layouts child -->

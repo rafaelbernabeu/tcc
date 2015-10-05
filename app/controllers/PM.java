@@ -1,6 +1,8 @@
 package controllers;
 
 import models.AquisicaoRenovacao;
+import models.Transferencia;
+import models.enums.SituacaoRequerente;
 import models.enums.TipoLogin;
 import models.Usuario;
 import models.enums.TipoParecer;
@@ -13,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Rafael on 17/09/2015.
+ * Created by Rafael Abrão Bernabeu on 17/09/2015.
  */
 @With(Secure.class)
 public class PM extends Controller {
@@ -38,36 +40,65 @@ public class PM extends Controller {
     public static void aquisicao() {
         AquisicaoRenovacao entity = new AquisicaoRenovacao();
         entity.requisicao = TipoRequisicao.AQUISICAO;
+        entity.data = new Date();
         render("/PM/anexo1.html", entity);
     }
     //Cria nova renovacao
     public static void renovacao() {
         AquisicaoRenovacao entity = new AquisicaoRenovacao();
         entity.requisicao = TipoRequisicao.RENOVACAO;
+        entity.data = new Date();
         render("/PM/anexo1.html", entity);
+    }
+
+    public static void transferencia() {
+        Transferencia entity = new Transferencia();
+        entity.data = new Date();
+        render("/PM/anexo2.html", entity);
     }
 
     //Lista as requisicoes
-    public static void existentesPendentes() {
+    public static void anexo1Pendentes() {
         List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecer", TipoParecer.PENDENTE).fetch();
-        render("/PM/existentes.html", aquisicoes);
+        render("/PM/listarAnexo1.html", aquisicoes);
     }
 
-    public static void existentesRespondidas() {
+    public static void anexo1Respondidas() {
         List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecerNotEqual", TipoParecer.PENDENTE).fetch();
-        render("/PM/existentes.html", aquisicoes);
+        render("/PM/listarAnexo1.html", aquisicoes);
+    }
+
+    public static void anexo2Pendentes() {
+        List<Transferencia> transferencias = Transferencia.find("byParecer", TipoParecer.PENDENTE).fetch();
+        render("/PM/listarAnexo2.html", transferencias);
+    }
+
+    public static void anexo2Respondidas() {
+        List<Transferencia> transferencias = Transferencia.find("byParecerNotEqual", TipoParecer.PENDENTE).fetch();
+        render("/PM/listarAnexo2.html", transferencias);
     }
 
     //Seleciona uma requisicao para ser editada
-    public static void editar(Long id) {
+    public static void editarAnexo1(Long id) {
         AquisicaoRenovacao entity = AquisicaoRenovacao.findById(id);
         render("/PM/anexo1.html", entity);
     }
 
-    public static void excluir(Long id) {
+    public static void excluirAnexo1(Long id) {
         AquisicaoRenovacao entity = AquisicaoRenovacao.findById(id);
         entity.delete();
-        existentesPendentes();
+        anexo1Pendentes();
+    }
+
+    public static void editarAnexo2(Long id) {
+        Transferencia entity = Transferencia.findById(id);
+        render("/PM/anexo2.html", entity);
+    }
+
+    public static void excluirAnexo2(Long id) {
+        Transferencia entity = Transferencia.findById(id);
+        entity.delete();
+        anexo2Pendentes();
     }
 
     public static void salvarAnexo1(String id, String fornecedor, String endereco, Long nordem,
@@ -94,65 +125,53 @@ public class PM extends Controller {
 
         anexo1.save();
 
-        PM.index();
+        PM.anexo1Pendentes();
 
     }
 
-    public static void salvarAnexo1b(String fornecedor, String endereco, Long nordem,
-                                    String requerente, String cargo, String lotacao, String cpf, String quantidade,
-                                    String tipo, String marca, String modelo, String calibre, String observacao) {
+    public static void salvarAnexo2(String id, String funcionalAlienante, String nomeAlienante, String identidadeAlienante, String CPFAlienante,
+                                    String cargoAlienante, String unidadeLotacaoAlienante, String enderecoAlienante,
+                                    String situacaoAlienante, String funcionalAdquirente, String nomeAdquirente,
+                                    String identidadeAdquirente, String CPFAdquirente, String cargoAdquirente,
+                                    String unidadeLotacaoAdquirente, String enderecoAdquirente, String situacaoAdquirente,
+                                    String tipo, String marca, String modelo, String calibre, String nSerie, String sigmaSinarm,
+                                    String especificacoes, String acessorios, String observacao, String local) {
 
-        AquisicaoRenovacao anexo1 = new AquisicaoRenovacao();
-        anexo1.requisicao = TipoRequisicao.RENOVACAO;
-        anexo1.parecer = TipoParecer.PENDENTE;
-        anexo1.fornecedor = fornecedor;
-        anexo1.localDeEntrega = endereco;
-        anexo1.nOrdem = nordem;
-        anexo1.nomeRequerente = requerente;
-        anexo1.cargo = cargo;
-        anexo1.unidadeLotacao = lotacao;
-        anexo1.CPF = cpf;
-        anexo1.quantidade = quantidade;
-        anexo1.tipo = tipo;
-        anexo1.marca = marca;
-        anexo1.modelo = modelo;
-        anexo1.calibre = calibre;
-        anexo1.observacao = observacao;
-        anexo1.data = new Date();
+        Transferencia entity = id != null && !id.equals("") ? (Transferencia)Transferencia.findById(Long.valueOf(id)) : new Transferencia();
 
-        anexo1.save();
+        entity.funcionalAlienante = funcionalAlienante;
+        entity.nomeAlienante = nomeAlienante;
+        entity.identidadeAlienante = identidadeAlienante;
+        entity.CPFAlienante = CPFAlienante;
+        entity.cargoAlienante = cargoAlienante;
+        entity.unidadeLotacaoAlienante = unidadeLotacaoAlienante;
+        entity.enderecoAlienante = enderecoAlienante;
+        entity.situacaoAlienante = SituacaoRequerente.valueOf(situacaoAlienante);
+        entity.funcionalAdquirente = funcionalAdquirente;
+        entity.nomeAdquirente = nomeAdquirente;
+        entity.identidadeAdquirente = identidadeAdquirente;
+        entity.CPFAdquirente = CPFAdquirente;
+        entity.cargoAdquirente = cargoAdquirente;
+        entity.unidadeLotacaoAdquirente = unidadeLotacaoAdquirente;
+        entity.enderecoAdquirente = enderecoAdquirente;
+        entity.situacaoAdquirente = SituacaoRequerente.valueOf(situacaoAdquirente);
+        entity.tipo = tipo;
+        entity.marca = marca;
+        entity.modelo = modelo;
+        entity.calibre = calibre;
+        entity.nSerie = nSerie;
+        entity.sigmaSinarm = sigmaSinarm;
+        entity.especificacoes = especificacoes;
+        entity.acessorios = acessorios;
+        entity.observacao = observacao;
+        entity.data = new Date();
+        entity.local = local;
+        //entity.parecer = parecer;
+        //entity.resposta = resposta;
 
-        render("/PM/renovacao.html");
+        entity.save();
 
-    }
-
-    public static void editarAnexo1(String id, String fornecedor, String endereco, Long nordem,
-                                    String requerente, String cargo, String lotacao, String cpf, String quantidade,
-                                    String tipo, String marca, String modelo, String calibre, String observacao) {
-
-        AquisicaoRenovacao anexo1 = AquisicaoRenovacao.findById(Long.valueOf(id));
-        anexo1.requisicao = TipoRequisicao.AQUISICAO;
-        anexo1.parecer = TipoParecer.PENDENTE;
-        anexo1.fornecedor = fornecedor;
-        anexo1.localDeEntrega = endereco;
-        anexo1.nOrdem = nordem;
-        anexo1.nomeRequerente = requerente;
-        anexo1.cargo = cargo;
-        anexo1.unidadeLotacao = lotacao;
-        anexo1.CPF = cpf;
-        anexo1.quantidade = quantidade;
-        anexo1.tipo = tipo;
-        anexo1.marca = marca;
-        anexo1.modelo = modelo;
-        anexo1.calibre = calibre;
-        anexo1.observacao = observacao;
-        anexo1.data = new Date();
-
-        anexo1.save();
-
-        render("/PM/anexo1.html");
+        PM.anexo2Pendentes();
 
     }
-
-
 }

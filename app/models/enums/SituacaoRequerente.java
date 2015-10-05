@@ -5,7 +5,7 @@ package models.enums;
  */
 public enum SituacaoRequerente {
 
-    ATIVO("Ativo"), INATIVO("Inativo"), REFORMADO("Reformado");
+    ATIVA("Ativa"), INATIVO("Inativo"), REFORMADO("Reformado");
 
     SituacaoRequerente(String descricao){
         this.descricao = descricao;

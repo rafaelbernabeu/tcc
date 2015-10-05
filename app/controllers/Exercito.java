@@ -1,6 +1,7 @@
 package controllers;
 
 import models.AquisicaoRenovacao;
+import models.Transferencia;
 import models.enums.TipoParecer;
 import models.enums.TipoLogin;
 import models.Usuario;
@@ -35,9 +36,14 @@ public class Exercito extends Controller {
     }
 
     //Seleciona para edicao
-    public static void editar(Long id) {
+    public static void editarAnexo1(Long id) {
         AquisicaoRenovacao entity = AquisicaoRenovacao.findById(id);
-        render("/Exercito/editarAnexo1.html", entity);
+        render("/Exercito/anexo1.html", entity);
+    }
+
+    public static void editarAnexo2(Long id) {
+        Transferencia entity = Transferencia.findById(id);
+        render("/Exercito/anexo2.html", entity);
     }
 
     //Salva alteracoes anexo1
