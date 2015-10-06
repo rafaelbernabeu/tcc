@@ -43,12 +43,12 @@
                     <td>${transferencia.parecer}</td>
                     <td>${transferencia.resposta}</td>
                     <td class="center">
-                        #{secure.check 'Administrador'}
+                        #{secure.check 'Exército'}
                             #{form @Exercito.editarAnexo2(), method:'POST', enctype:'multipart/form-data'}
                                 <button type="submit" class="btn btn-default btn-xs" name="id" value="${transferencia.id}">Parecer</button>
                             #{/form}
                         #{/secure.check}
-                        #{secure.check 'Administrador'}
+                        #{secure.check 'Polícia Militar'}
                             #{form @PM.editarAnexo2(), method:'POST', enctype:'multipart/form-data'}
                                 <button type="submit" class="btn btn-default btn-xs" name="id" value="${transferencia.id}">Editar</button>
                             #{/form}

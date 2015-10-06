@@ -66,6 +66,9 @@ public class Exercito extends Controller {
                     case PENDENTE:
                         aquisicoesPendentes();
                         break;
+                    default:
+                        Exercito.index();
+                        break;
                 }
                 break;
             case RENOVACAO:
@@ -83,7 +86,33 @@ public class Exercito extends Controller {
                 break;
             default:
                 Exercito.index();
+                break;
         }
+    }
+
+    public static void salvarAnexo2(String id, String parecer, String resposta) {
+
+        Transferencia anexo = Transferencia.findById(Long.valueOf(id));
+        anexo.parecer = TipoParecer.valueOf(parecer);
+        anexo.resposta = resposta;
+        anexo.save();
+
+        switch (anexo.parecer) {
+
+            case FAVORAVEL:
+                transferenciasFavoraveis();
+                break;
+            case DESFAVORAVEL:
+                transferenciasDesfavoraveis();
+                break;
+            case PENDENTE:
+                transferenciasPendentes();
+                break;
+            default:
+                Exercito.index();
+                break;
+        }
+
     }
 
     public static void aquisicoesPendentes() {
@@ -124,6 +153,31 @@ public class Exercito extends Controller {
     public static void todasRenovacoes() {
         List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.RENOVACAO).fetch();
         render("/Exercito/renovacoes.html", renovacoes);
+    }
+
+    public static void transferenciasPendentes() {
+        List<Transferencia> transferencias = Transferencia.find("byParecer", TipoParecer.PENDENTE).fetch();
+        render("/Exercito/transferencias.html", transferencias);
+    }
+
+    public static void transferenciasRespondidas() {
+        List<Transferencia> transferencias = Transferencia.find("byParecerNotEqual", TipoParecer.PENDENTE).fetch();
+        render("/Exercito/transferencias.html", transferencias);
+    }
+
+    public static void transferenciasFavoraveis() {
+        List<Transferencia> transferencias = Transferencia.find("byParecer", TipoParecer.FAVORAVEL).fetch();
+        render("/Exercito/transferencias.html", transferencias);
+    }
+
+    public static void transferenciasDesfavoraveis() {
+        List<Transferencia> transferencias = Transferencia.find("byParecer", TipoParecer.DESFAVORAVEL).fetch();
+        render("/Exercito/transferencias.html", transferencias);
+    }
+
+    public static void todasTransferencias() {
+        List<Transferencia> transferencias = Transferencia.findAll();
+        render("/Exercito/transferencias.html", transferencias);
     }
 
 }

@@ -6,10 +6,14 @@
 Faça Login.
 <br/><br/>
 
-#{secure.check 'Administrador'}
+#{secure.check 'Exército'}
     <a href="@{Exercito.index}">Exército</a><br/>
+#{/secure.check}
+#{secure.check 'Polícia Militar'}
     <a href="@{PM.index}">Polícia Militar</a><br/>
-    <a href="@{PM.index}">Admin</a>
+#{/secure.check}
+#{secure.check 'Administrador'}
+    <a href="@{Admin.index}">Admin</a>
 #{/secure.check}
 
 #{set 'moreStyles'}

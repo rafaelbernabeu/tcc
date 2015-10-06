@@ -170,25 +170,25 @@
                                             </a>
                                         </li><!-- /header layouts child -->
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{Exercito.transferenciasPendentes()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Pendentes
                                             </a>
                                         </li>
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{Exercito.transferenciasFavoraveis()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Favoráveis
                                             </a>
                                         </li>
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{Exercito.transferenciasDesfavoraveis()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Desfavoráveis
                                             </a>
                                         </li>
                                         <li class="side-nav-item">
-                                            <a href="">
+                                            <a href="@{Exercito.todasTransferencias()}">
                                                 <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                 Todas
                                             </a>
@@ -234,7 +234,7 @@
                             </li>
                             <li class="dropdown-footer">
                                 <div class="clearfix">
-                                    <a href="@{Secure.logout}" class="btn btn-sm btn-default pull-right">Logout</a>
+                                    <a href="@{Secure.logout()}" class="btn btn-sm btn-default pull-right">Logout</a>
                                     <a href="page_profile.html" class="btn btn-sm btn-default pull-left">Profile</a>
                                 </div>
                             </li><!-- /dropdown-footer -->

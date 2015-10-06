@@ -37,6 +37,10 @@ GET     /ex/renovacoes/pendentes                Exercito.renovacoesPendentes
 GET     /ex/renovacoes/favoraveis               Exercito.renovacoesFavoraveis
 GET     /ex/renovacoes/desvaforaveis            Exercito.renovacoesDesfavoraveis
 GET     /ex/renovacoes/todas                    Exercito.todasRenovacoes
+GET     /ex/transferencias/pendentes            Exercito.transferenciasPendentes
+GET     /ex/transferencias/favoraveis           Exercito.transferenciasFavoraveis
+GET     /ex/transferencias/desfavoraveis        Exercito.transferenciasDesfavoraveis
+GET     /ex/transferencias/todas                Exercito.todasTransferencias
 
 POST    /ex/anexo1/editar                       Exercito.editarAnexo1
 POST    /ex/anexo1/salvar                       Exercito.salvarAnexo1
@@ -71,6 +75,8 @@ GET     /ex/assets/                             staticDir:app/views/syrena/asset
 GET     /ex/aquisicoes/assets/                  staticDir:app/views/syrena/assets
 GET     /ex/renovacoes/assets/                  staticDir:app/views/syrena/assets
 GET     /ex/formularios/assets/                 staticDir:app/views/syrena/assets
+GET     /ex/transferencias/assets/              staticDir:app/views/syrena/assets
+GET     /ex/anexo2/assets/                      staticDir:app/views/syrena/assets
 
 # Catch all
 #*       /{controller}/{action}                  {controller}.{action}
