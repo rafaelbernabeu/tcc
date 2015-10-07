@@ -33,7 +33,11 @@ public class PM extends Controller {
     }
 
     public static void index() {
-        render();
+        Integer qtdAquisicoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.AQUISICAO).fetch().size();
+        Integer qtdRenovacoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.RENOVACAO).fetch().size();
+        Integer qtdTransferencias = Transferencia.findAll().size();
+
+        render(qtdAquisicoes, qtdRenovacoes, qtdTransferencias);
     }
 
     //Cria nova aquisicao
