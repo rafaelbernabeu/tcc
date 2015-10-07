@@ -60,6 +60,7 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 GET     /assets/                                staticDir:app/views/syrena/assets
+GET     /imagens/                               staticDir:app/views/imagens
 
 GET     /pm/assets/                             staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/assets/                 staticDir:app/views/syrena/assets

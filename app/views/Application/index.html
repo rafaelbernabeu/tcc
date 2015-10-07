@@ -1,10 +1,10 @@
 #{extends '/syrena/templateApplication.html' /}
-#{set title:'Home' /}
+#{set title:'Autorização Para Aquisição de Armas de Fogo Por Policiais Militares' /}
 
-<h2>Autorização Para Aquisição de Armas de Fogo Por Policiais Militares.</h2>
-
-Faça Login.
+<h2>Faça Login.</h2>
 <br/><br/>
+<img src="/imagens/exercito.jpg" alt="Login Exercito">
+<img src="/imagens/policia.jpg" alt="Login Polícia Militar">
 
 #{secure.check 'Exército'}
     <a href="@{Exercito.index}">Exército</a><br/>
