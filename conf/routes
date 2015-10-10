@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                                       Application.index
+GET     /admin                                  Admin.index
 
 GET     /pm/home                                PM.index
 
