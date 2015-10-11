@@ -15,6 +15,10 @@ import javax.persistence.Entity;
 @Entity
 public class Usuario extends Model {
 
+    public Usuario() {
+        this.estado = Estado.Distrito_Federal;
+    }
+
     @Email
     @Required
     public String email;
