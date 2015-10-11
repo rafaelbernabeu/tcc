@@ -8,7 +8,7 @@
             <h3 class="pb-title">Requisições Pendentes</h3>
         </div>
         <div id="chart-bar" class="chart" style="position: relative;">
-            <svg height="300" version="1.1" width="297" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.40625px;"
+            <svg height="300" version="1.1" width="297" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.40625px;">
             <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
             <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
             <text x="43.5" y="231.985167404" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#34495e" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal">
@@ -30,8 +30,6 @@
 
 </div>
 
-<div id="piechart" style="width: 900px; height: 500px;"></div>
-
 #{set 'moreStyles'}
 <style type="text/css" rel="stylesheet">
 
@@ -39,28 +37,6 @@
 #{/set}
 
 #{set 'moreScripts'}
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Tipo', 'Quantidade'],
-          ['Aquisições',     ${qtdAquisicoes}],
-          ['Renovações',      ${qtdRenovacoes}],
-          ['Transferências',  ${qtdTransferencias}],
-        ]);
-
-        var options = {
-          title: 'Tipos de Requisições'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
 <script src="assets/morris/morris.min.js"></script>
 
 <script type="text/javascript">

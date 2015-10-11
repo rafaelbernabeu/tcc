@@ -26,9 +26,9 @@ public class Exercito extends Controller {
             Usuario user = Usuario.find("byEmail", Security.connected()).first();
             renderArgs.put("user", user.nome);
             renderArgs.put("email", user.email);
-//            if (user.instituicao.equals(TipoLogin.POLICIAMILITAR)) {
-//                PM.index();
-//            }
+            if (user.instituicao.equals(TipoLogin.POLICIAMILITAR)) {
+                PM.index();
+            }
         }
     }
 

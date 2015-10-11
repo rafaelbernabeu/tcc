@@ -6,12 +6,7 @@ import play.mvc.With;
 /**
  * Created by Rafael on 20/09/2015.
  */
-@Check("Administrador")
 @With(Secure.class)
+@Check("Administrador")
 public class Admin extends Controller {
-
-    public static void index() {
-        render();
-    }
-
 }

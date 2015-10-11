@@ -1,15 +1,27 @@
 #{extends '/syrena/templateApplication.html' /}
-#{set title:'Autorização Para Aquisição de Armas de Fogo Por Policiais Militares' /}
-
+#{set title:'Bem-vindo!'/}
 #{if !connected}
-    <h2>Faça Login:</h2>
-    <br/><br/>
+    <h2>Por favor, faça login:</h2>
 #{/if}
+#{else}
+<h2>Usuário logado: ${user} - ${email} - ${instituicao}</h2>
+#{/else}
+<div class="magic-layout ml-col-2 isotope" data-cols="2" style="position: relative; overflow: hidden; height: 1240px;">
 
-<a href="@{Exercito.index}">
-    <img src="/imagens/exercito.jpg" alt="Login Exercito">
-</a>
+        <div class="panel panel-default magic-element isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 281px, 0px);">
+            <div class="kits-media">
+                <a href="@{Exercito.index}">
+                    <img src="/imagens/exercito.jpg" alt="Login Exercito">
+                </a>
+            </div><!-- /kits-media -->
+        </div>
 
-<a href="@{PM.index}">
-    <img src="/imagens/policia.jpg" alt="Login Polícia Militar">
-</a>
+    <div class="panel panel-default magic-element isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 281px, 0px);">
+        <div class="kits-media">
+            <a href="@{PM.index}">
+                <img src="/imagens/policia.jpg" alt="Login Polícia Militar">
+            </a>
+        </div><!-- /kits-media -->
+    </div>
+
+</div>

@@ -7,7 +7,6 @@ GET     /                                       Application.index
 
 GET     /pm/home                                PM.index
 
-
 GET     /pm/requisicoes/aquisicoes/nova          PM.aquisicao
 POST    /pm/requisicoes/aquisicoes/salvar        PM.salvarAnexo1
 GET     /pm/requisicoes/aquisicoes/pendentes     PM.aquisicoesPendentes
@@ -52,6 +51,12 @@ POST    /ex/anexo1/salvar                       Exercito.salvarAnexo1
 POST    /ex/anexo2/editar                       Exercito.editarAnexo2
 POST    /ex/anexo2/salvar                       Exercito.salvarAnexo2
 
+GET     /usuarios/novo/{tipo}                   Usuarios.novo
+GET     /usuarios/listar                        Usuarios.listar
+POST    /usuarios/editar                        Usuarios.editar
+POST    /usuarios/salvar                        Usuarios.salvar
+POST    /usuarios/excluir                       Usuarios.excluir
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
@@ -77,6 +82,10 @@ GET     /ex/assets/                             staticDir:app/views/syrena/asset
 GET     /ex/aquisicoes/assets/                  staticDir:app/views/syrena/assets
 GET     /ex/renovacoes/assets/                  staticDir:app/views/syrena/assets
 GET     /ex/transferencias/assets/              staticDir:app/views/syrena/assets
+
+GET     /usuarios/assets/                       staticDir:app/views/syrena/assets
+GET     /usuarios/novo/assets/                  staticDir:app/views/syrena/assets
+
 
 # Catch all
 #*       /{controller}/{action}                  {controller}.{action}

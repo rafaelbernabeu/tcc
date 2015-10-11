@@ -43,7 +43,7 @@
         <aside class="side-left">
             <div class="side-header">
                 <h1 id="brand" class="brand" style="text-align: center;">
-                    <a href="@{Application.index}" style="text-transform: capitalize;">
+                    <a href="@{Application.index}">
                         TCC II - Entrega Final
                     </a>
                 </h1><!-- /brand -->
@@ -72,10 +72,85 @@
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="/admin">
-                                <i class="nav-item-icon glyphicon glyphicon-cog"></i>
+                            <a href="#admin">
+                                <i class="nav-item-caret"></i>
+                                <i class="nav-item-icon icon glyphicon glyphicon-cog"></i>
                                 Administração
                             </a>
+                            <ul id="admin" class="side-nav-child">
+                                <li class="side-nav-item-heading">
+                                    <a href="#" class="side-nav-back">
+                                        <i class="nav-item-caret"></i>
+                                        Administração
+                                    </a>
+                                </li><!-- /header layouts child -->
+                                <li class="side-nav-item">
+                                    <a href="#usuarios">
+                                        <i class="nav-item-caret"></i>
+                                        <i class="nav-item-icon icon glyphicon glyphicon-user"></i>
+                                        Usuários
+                                    </a>
+                                    <ul id="usuarios" class="side-nav-child">
+                                        <li class="side-nav-item-heading">
+                                            <a href="#" class="side-nav-back">
+                                                <i class="nav-item-caret"></i>
+                                                Usuários
+                                            </a>
+                                        </li><!-- /header layouts child -->
+                                        <li class="side-nav-item">
+                                            <a href="#novo">
+                                                <i class="nav-item-caret"></i>
+                                                <i class="nav-item-icon icon glyphicon glyphicon-user"></i>
+                                                Novo
+                                            </a>
+                                            <ul id="novo" class="side-nav-child">
+                                                <li class="side-nav-item-heading">
+                                                    <a href="#" class="side-nav-back">
+                                                        <i class="nav-item-caret"></i>
+                                                        Novo
+                                                    </a>
+                                                </li><!-- /header layouts child -->
+                                                <li class="side-nav-item">
+                                                    <a href="@{Usuarios.novo('EXERCITO')}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-star"></i>
+                                                        Exército
+                                                    </a>
+                                                </li>
+                                                <li class="side-nav-item">
+                                                    <a href="@{Usuarios.novo('POLICIAMILITAR')}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-user"></i>
+                                                        Polícia Militar
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="@{Usuarios.listar()}">
+                                                <i class="nav-item-icon glyphicon glyphicon-list"></i>
+                                                Todos
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a href="@{Secure.login()}">
+                                        <i class="nav-item-icon glyphicon glyphicon-ok"></i>
+                                        Login
+                                    </a>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a href="@{Secure.logout()}">
+                                        <i class="nav-item-icon glyphicon glyphicon-remove"></i>
+                                        Logout
+                                    </a>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a href="/admin">
+                                        <i class="nav-item-icon glyphicon glyphicon-wrench"></i>
+                                        CRUD Module
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul><!-- /nav ul-->
                 </nav>
@@ -88,7 +163,7 @@
                     <button id="toggle-content" class="btn btn-icon" type="button"><i class="icon ion-navicon-round"></i></button>
                 </div><!-- /header actions -->
 
-                <h1 class="content-title" style="text-transform: capitalize;">#{get 'title' /}</h1>
+                <h1 class="content-title">#{get 'title' /}</h1>
             </header><!-- /side left -->
 
             <div class="content-spliter">

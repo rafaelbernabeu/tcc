@@ -5,22 +5,27 @@ package models.enums;
  */
 public enum Estado {
 
-    Acre("Acre"), Alagoas("Alagoas"), Amapa("Amapa"),
-    Amazonas("Amazonas"), Bahia("Bahia"), Ceara("Ceará"), Distrito_Federal("Distrito Federal"),
-    Espirito_Santo("Espirito Santo"), Goias("Goiás"), Maranhao("Maranhão"), Mato_Grosso("Mato Grosso"),
-    Mato_Grosso_do_Sul("Mato Grosso do Sul"), Minas_Gerais("Minas Gerais"),
-    Para("Pará"), Paraiba("Paraíba"), Parana("Paraná"), Pernambuco("Pernambuco"), Piaui("Piauí"),
-    Rio_de_Janeiro("Rio de Janeiro"), Rio_Grande_do_Norte("Rio Grande do Norte"),
-    Rio_Grande_do_Sul("Rio Grande do Sul"), Rondonia("Rondonia"), Roraima("Roraima"),
-    Santa_Catarina("Santa Catarina"), Sao_Paulo("São Paulo"), Sergipe("Sergipe"), Tocantins("Tocantins");
+    Acre("Acre","AC"), Alagoas("Alagoas", "AL"), Amapa("Amapá", "AP"),
+    Amazonas("Amazonas", "AM"), Bahia("Bahia", "BA"), Ceara("Ceará", "CE"), Distrito_Federal("Distrito Federal", "DF"),
+    Espirito_Santo("Espirito Santo", "ES"), Goias("Goiás", "GO"), Maranhao("Maranhão", "MA"), Mato_Grosso("Mato Grosso", "MT"),
+    Mato_Grosso_do_Sul("Mato Grosso do Sul", "MS"), Minas_Gerais("Minas Gerais", "MG"),
+    Para("Pará", "PA"), Paraiba("Paraíba", "PB"), Parana("Paraná", "PR"), Pernambuco("Pernambuco", "PE"), Piaui("Piauí", "PI"),
+    Rio_de_Janeiro("Rio de Janeiro", "RJ"), Rio_Grande_do_Norte("Rio Grande do Norte", "RN"),
+    Rio_Grande_do_Sul("Rio Grande do Sul", "RS"), Rondonia("Rondonia", "RO"), Roraima("Roraima", "RR"),
+    Santa_Catarina("Santa Catarina", "SC"), Sao_Paulo("São Paulo", "SP"), Sergipe("Sergipe", "SE"), Tocantins("Tocantins", "TO");
 
     private String descricao;
+    private String sigla;
 
-    Estado(String descricao) { this.descricao = descricao; }
+    Estado(String descricao, String sigla) {
+        this.descricao = descricao;
+        this.sigla = sigla;
+    }
 
     public String getDescricao() {
         return descricao;
     }
+    public String getSigla() { return sigla; }
 
     @Override
     public String toString() {

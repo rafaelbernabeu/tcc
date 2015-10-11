@@ -42,9 +42,9 @@
     <section id="wrapper" class="container">
         <aside class="side-left">
             <div class="side-header">
-                <h1 id="brand" class="brand" style="text-align: center;">
-                    <a href="@{Application.index}" style="text-transform: capitalize;">
-                        TCC II
+                <h1 id="brand" class="brand">
+                    <a href="@{Application.index}">
+                        Polícia Militar - ${estado}
                     </a>
                 </h1><!-- /brand -->
                 <form id="smart-search" class="side-form hide" role="form">
@@ -236,7 +236,6 @@
             <header class="content-header">
                 <div class="header-actions pull-left">
                     <button id="toggle-content" class="btn btn-icon" type="button"><i class="icon ion-navicon-round"></i></button>
-                    <button id="toggle-search" class="btn btn-icon" type="button"><i class="icon ion-search"></i></button>
                 </div><!-- /header actions -->
 
                 <div class="header-actions pull-right">
@@ -265,7 +264,7 @@
                     </div><!-- /btn-group setting -->
                 </div>
 
-                <h1 class="content-title" style="text-transform: capitalize;">#{get 'title' /}</h1>
+                <h1 class="content-title">#{get 'title' /}</h1>
             </header><!-- /side left -->
 
             <div class="content-spliter">

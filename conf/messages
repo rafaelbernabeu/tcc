@@ -1,6 +1,7 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+id=ID
 email=E-mail
 password=Senha
 nome=Nome
