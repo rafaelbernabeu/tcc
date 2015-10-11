@@ -17,6 +17,7 @@ import java.util.List;
 /**
  * Created by Rafael Abrão Bernabeu on 17/09/2015.
  */
+@Check("Polícia Militar")
 @With(Secure.class)
 public class PM extends Controller {
 
@@ -26,9 +27,9 @@ public class PM extends Controller {
             Usuario user = Usuario.find("byEmail", Security.connected()).first();
             renderArgs.put("user", user.nome);
             renderArgs.put("email", user.email);
-            if (user.instituicao.equals(TipoLogin.EXERCITO)) {
-                Exercito.index();
-            }
+//            if (user.instituicao.equals(TipoLogin.EXERCITO)) {
+//                Exercito.index();
+//            }
         }
     }
 
@@ -65,23 +66,48 @@ public class PM extends Controller {
     }
 
     //Lista as requisicoes
-    public static void anexo1Pendentes() {
-        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecer", TipoParecer.PENDENTE).fetch();
+    public static void aquisicoesPendentes() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecerAndRequisicao", TipoParecer.PENDENTE, TipoRequisicao.AQUISICAO).fetch();
         render("/PM/listarAnexo1.html", aquisicoes);
     }
 
-    public static void anexo1Respondidas() {
-        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecerNotEqual", TipoParecer.PENDENTE).fetch();
+    public static void aquisicoesRespondidas() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecerNotEqualAndRequisicao", TipoParecer.PENDENTE, TipoRequisicao.AQUISICAO).fetch();
         render("/PM/listarAnexo1.html", aquisicoes);
     }
 
-    public static void anexo2Pendentes() {
+    public static void todasAquisicoes() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.AQUISICAO).fetch();
+        render("/PM/listarAnexo1.html", aquisicoes);
+    }
+
+    public static void renovacoesPendentes() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecerAndRequisicao", TipoParecer.PENDENTE, TipoRequisicao.RENOVACAO).fetch();
+        render("/PM/listarAnexo1.html", aquisicoes);
+    }
+
+    public static void renovacoesRespondidas() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byParecerNotEqualAndRequisicao", TipoParecer.PENDENTE, TipoRequisicao.RENOVACAO).fetch();
+        render("/PM/listarAnexo1.html", aquisicoes);
+    }
+
+    public static void todasRenovacoes() {
+        List<AquisicaoRenovacao> aquisicoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.RENOVACAO).fetch();
+        render("/PM/listarAnexo1.html", aquisicoes);
+    }
+
+    public static void transferenciasPendentes() {
         List<Transferencia> transferencias = Transferencia.find("byParecer", TipoParecer.PENDENTE).fetch();
         render("/PM/listarAnexo2.html", transferencias);
     }
 
-    public static void anexo2Respondidas() {
+    public static void transferenciasRespondidas() {
         List<Transferencia> transferencias = Transferencia.find("byParecerNotEqual", TipoParecer.PENDENTE).fetch();
+        render("/PM/listarAnexo2.html", transferencias);
+    }
+
+    public static void todasTransferencias() {
+        List<Transferencia> transferencias = Transferencia.findAll();
         render("/PM/listarAnexo2.html", transferencias);
     }
 
@@ -92,9 +118,10 @@ public class PM extends Controller {
     }
 
     public static void excluirAnexo1(Long id) {
+        checkAuthenticity();
         AquisicaoRenovacao entity = AquisicaoRenovacao.findById(id);
         entity.delete();
-        anexo1Pendentes();
+        index();
     }
 
     public static void editarAnexo2(Long id) {
@@ -103,15 +130,17 @@ public class PM extends Controller {
     }
 
     public static void excluirAnexo2(Long id) {
+        checkAuthenticity();
         Transferencia entity = Transferencia.findById(id);
         entity.delete();
-        anexo2Pendentes();
+        transferenciasPendentes();
     }
 
     public static void salvarAnexo1(String id, String fornecedor, String endereco, Long nordem,
                                           String requerente, String cargo, String lotacao, String cpf, String quantidade,
                                           String tipo, String marca, String modelo, String calibre, String observacao, String requisicao) {
 
+        checkAuthenticity();
         AquisicaoRenovacao anexo1 = id != null && !id.equals("") ? (AquisicaoRenovacao)AquisicaoRenovacao.findById(Long.valueOf(id)) : new AquisicaoRenovacao();
         anexo1.requisicao = TipoRequisicao.valueOf(requisicao);
         anexo1.parecer = TipoParecer.PENDENTE;
@@ -132,7 +161,14 @@ public class PM extends Controller {
 
         anexo1.save();
 
-        PM.anexo1Pendentes();
+        switch (anexo1.requisicao) {
+            case AQUISICAO:
+                PM.aquisicoesPendentes();
+                break;
+            case RENOVACAO:
+                PM.renovacoesPendentes();
+                break;
+        }
 
     }
 
@@ -144,8 +180,8 @@ public class PM extends Controller {
                                     String tipo, String marca, String modelo, String calibre, String nSerie, String sigmaSinarm,
                                     String especificacoes, String acessorios, String observacao, String local) {
 
+        checkAuthenticity();
         Transferencia entity = id != null && !id.equals("") ? (Transferencia)Transferencia.findById(Long.valueOf(id)) : new Transferencia();
-
         entity.funcionalAlienante = funcionalAlienante;
         entity.nomeAlienante = nomeAlienante;
         entity.identidadeAlienante = identidadeAlienante;
@@ -178,7 +214,7 @@ public class PM extends Controller {
 
         entity.save();
 
-        PM.anexo2Pendentes();
+        PM.transferenciasPendentes();
 
     }
 }

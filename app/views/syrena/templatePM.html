@@ -125,55 +125,100 @@
                                             </a>
                                         </li><!-- /header layouts child -->
                                         <li class="side-nav-item">
-                                            <a href="#anexo1">
+                                            <a href="#aquisicoes">
                                                 <i class="nav-item-caret"></i>
                                                 <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
-                                                Anexo I
+                                                Aquisições
                                             </a>
-                                            <ul id="anexo1" class="side-nav-child">
+                                            <ul id="aquisicoes" class="side-nav-child">
                                                 <li class="side-nav-item-heading">
                                                     <a href="#" class="side-nav-back">
                                                         <i class="nav-item-caret"></i>
-                                                        Anexo I
+                                                        Aquisições
                                                     </a>
                                                 </li><!-- /header layouts child -->
                                                 <li class="side-nav-item">
-                                                    <a href="@{PM.anexo1Pendentes()}">
+                                                    <a href="@{PM.aquisicoesPendentes()}">
                                                         <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                         Pendentes
                                                     </a>
                                                 </li>
                                                 <li class="side-nav-item">
-                                                    <a href="@{PM.anexo1Respondidas()}">
+                                                    <a href="@{PM.aquisicoesRespondidas()}">
                                                         <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                         Respondidas
+                                                    </a>
+                                                </li>
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.todasAquisicoes}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Todas
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li><!-- /blank -->
                                         <li class="side-nav-item">
-                                            <a href="#anexo2">
+                                            <a href="#renovacoes">
                                                 <i class="nav-item-caret"></i>
                                                 <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
-                                                Anexo II
+                                                Renovações
                                             </a>
-                                            <ul id="anexo2" class="side-nav-child">
+                                            <ul id="renovacoes" class="side-nav-child">
                                                 <li class="side-nav-item-heading">
                                                     <a href="#" class="side-nav-back">
                                                         <i class="nav-item-caret"></i>
-                                                        Anexo II
+                                                        Renovações
                                                     </a>
                                                 </li><!-- /header layouts child -->
                                                 <li class="side-nav-item">
-                                                    <a href="@{PM.anexo2Pendentes()}">
+                                                    <a href="@{PM.renovacoesPendentes()}">
                                                         <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                         Pendentes
                                                     </a>
                                                 </li>
                                                 <li class="side-nav-item">
-                                                    <a href="@{PM.anexo2Respondidas()}">
+                                                    <a href="@{PM.renovacoesRespondidas()}">
                                                         <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
                                                         Respondidas
+                                                    </a>
+                                                </li>
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.todasRenovacoes()}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Todas
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li><!-- /blank -->
+                                        <li class="side-nav-item">
+                                            <a href="#transferencias">
+                                                <i class="nav-item-caret"></i>
+                                                <i class="nav-item-icon icon glyphicon glyphicon-list"></i>
+                                                Tranferências
+                                            </a>
+                                            <ul id="transferencias" class="side-nav-child">
+                                                <li class="side-nav-item-heading">
+                                                    <a href="#" class="side-nav-back">
+                                                        <i class="nav-item-caret"></i>
+                                                        Tranferências
+                                                    </a>
+                                                </li><!-- /header layouts child -->
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.transferenciasPendentes()}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Pendentes
+                                                    </a>
+                                                </li>
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.transferenciasRespondidas()}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Respondidas
+                                                    </a>
+                                                </li>
+                                                <li class="side-nav-item">
+                                                    <a href="@{PM.todasTransferencias()}">
+                                                        <i class="nav-item-icon glyphicon glyphicon-list-alt"></i>
+                                                        Todas
                                                     </a>
                                                 </li>
                                             </ul>
@@ -208,13 +253,6 @@
                                         <img class="img-circle" src="assets/app/img/avatar4.png" alt="">
                                     </a>
                                     <div class="dp-details">${user}</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row text-center">
-                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">138 <small>Posts</small></a>
-                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">26 <small>Items</small></a>
-                                    <a href="#" class="col-lg-4 col-sm-4 col-sm-4 col-xs-4">570 <small>Follow</small></a>
                                 </div>
                             </li>
                             <li class="dropdown-footer">

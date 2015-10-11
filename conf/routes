@@ -4,24 +4,27 @@
 
 # Home page
 GET     /                                       Application.index
-#GET     /admin                                  Admin.index
 
 GET     /pm/home                                PM.index
 
-GET     /pm/requisicoes/aquisicao/nova          PM.aquisicao
-POST    /pm/requisicoes/aquisicao/salvar        PM.salvarAnexo1
 
-GET     /pm/requisicoes/renovacao/nova          PM.renovacao
-POST    /pm/requisicoes/renovacao/salvar        PM.salvarAnexo1
+GET     /pm/requisicoes/aquisicoes/nova          PM.aquisicao
+POST    /pm/requisicoes/aquisicoes/salvar        PM.salvarAnexo1
+GET     /pm/requisicoes/aquisicoes/pendentes     PM.aquisicoesPendentes
+GET     /pm/requisicoes/aquisicoes/respondidas   PM.aquisicoesRespondidas
+GET     /pm/requisicoes/aquisicoes/todas         PM.todasAquisicoes
 
-GET     /pm/requisicoes/transferencia/nova      PM.transferencia
-POST    /pm/requisicoes/transferencia/salvar    PM.salvarAnexo2
+GET     /pm/requisicoes/renovacoes/nova          PM.renovacao
+POST    /pm/requisicoes/renovacoes/salvar        PM.salvarAnexo1
+GET     /pm/requisicoes/renovacoes/pendentes     PM.renovacoesPendentes
+GET     /pm/requisicoes/renovacoes/respondidas   PM.renovacoesRespondidas
+GET     /pm/requisicoes/renovacoes/todas         PM.todasRenovacoes
 
-GET     /pm/requisicoes/anexo1/pendentes        PM.anexo1Pendentes
-GET     /pm/requisicoes/anexo1/respondidas      PM.anexo1Respondidas
-
-GET     /pm/requisicoes/anexo2/pendentes        PM.anexo2Pendentes
-GET     /pm/requisicoes/anexo2/respondidas      PM.anexo2Respondidas
+GET     /pm/requisicoes/transferencias/nova             PM.transferencia
+POST    /pm/requisicoes/transferencias/salvar           PM.salvarAnexo2
+GET     /pm/requisicoes/transferencias/pendentes        PM.transferenciasPendentes
+GET     /pm/requisicoes/transferencias/respondidas      PM.transferenciasRespondidas
+GET     /pm/requisicoes/transferencias/todas            PM.todasTransferencias
 
 POST    /pm/requisicoes/anexo1/editar           PM.editarAnexo1
 POST    /pm/requisicoes/anexo1/excluir          PM.excluirAnexo1
@@ -54,6 +57,7 @@ GET     /favicon.ico                            404
 
 # Import CRUD routes
 *       /admin                                  module:crud
+GET     /admin/?                                Admin.index
 
 # Import Secure routes
 *       /                                       module:secure
@@ -63,23 +67,16 @@ GET     /public/                                staticDir:public
 GET     /assets/                                staticDir:app/views/syrena/assets
 GET     /imagens/                               staticDir:app/views/imagens
 
-GET     /pm/assets/                             staticDir:app/views/syrena/assets
-GET     /pm/requisicoes/assets/                 staticDir:app/views/syrena/assets
-GET     /pm/requisicoes/aquisicao/assets/       staticDir:app/views/syrena/assets
-GET     /pm/requisicoes/renovacao/assets/       staticDir:app/views/syrena/assets
-GET     /pm/requisicoes/existentes/assets/      staticDir:app/views/syrena/assets
-GET     /pm/requisicoes/transferencia/assets/   staticDir:app/views/syrena/assets
-GET     /pm/requisicoes/anexo1/assets/          staticDir:app/views/syrena/assets
-GET     /pm/requisicoes/anexo2/assets/          staticDir:app/views/syrena/assets
-
+GET     /pm/assets/                              staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/assets/                  staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/aquisicoes/assets/       staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/renovacoes/assets/       staticDir:app/views/syrena/assets
+GET     /pm/requisicoes/transferencias/assets/   staticDir:app/views/syrena/assets
 
 GET     /ex/assets/                             staticDir:app/views/syrena/assets
 GET     /ex/aquisicoes/assets/                  staticDir:app/views/syrena/assets
 GET     /ex/renovacoes/assets/                  staticDir:app/views/syrena/assets
-GET     /ex/formularios/assets/                 staticDir:app/views/syrena/assets
 GET     /ex/transferencias/assets/              staticDir:app/views/syrena/assets
-GET     /ex/anexo1/assets/                      staticDir:app/views/syrena/assets
-GET     /ex/anexo2/assets/                      staticDir:app/views/syrena/assets
 
 # Catch all
 #*       /{controller}/{action}                  {controller}.{action}

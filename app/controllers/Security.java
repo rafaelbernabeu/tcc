@@ -19,18 +19,15 @@ public class Security extends Secure.Security {
             return Usuario.find("byEmail", Security.connected()).<Usuario>first().instituicao.compareTo(TipoLogin.ADMIN) == 0;
         }
         if(TipoLogin.EXERCITO.getDescricao().equals(profile)) {
-            return Usuario.find("byEmail", Security.connected()).<Usuario>first().instituicao.compareTo(TipoLogin.EXERCITO) == 0;
+            return Usuario.find("byEmail", Security.connected()).<Usuario>first().instituicao.compareTo(TipoLogin.EXERCITO) == 0 ||
+                    Usuario.find("byEmail", Security.connected()).<Usuario>first().instituicao.compareTo(TipoLogin.ADMIN) == 0;
         }
         if(TipoLogin.POLICIAMILITAR.getDescricao().equals(profile)) {
-            return Usuario.find("byEmail", Security.connected()).<Usuario>first().instituicao.compareTo(TipoLogin.POLICIAMILITAR) == 0;
+            return Usuario.find("byEmail", Security.connected()).<Usuario>first().instituicao.compareTo(TipoLogin.POLICIAMILITAR) == 0 ||
+                    Usuario.find("byEmail", Security.connected()).<Usuario>first().instituicao.compareTo(TipoLogin.ADMIN) == 0;
         }
         return false;
     }
-
-    static void onDisconnect() {
-        Application.index();
-    }
-
 
 
 }

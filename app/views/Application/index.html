@@ -1,25 +1,15 @@
 #{extends '/syrena/templateApplication.html' /}
 #{set title:'Autorização Para Aquisição de Armas de Fogo Por Policiais Militares' /}
 
-<h2>Faça Login.</h2>
-<br/><br/>
+#{if !connected}
+    <h2>Faça Login:</h2>
+    <br/><br/>
+#{/if}
+
 <a href="@{Exercito.index}">
     <img src="/imagens/exercito.jpg" alt="Login Exercito">
 </a>
+
 <a href="@{PM.index}">
     <img src="/imagens/policia.jpg" alt="Login Polícia Militar">
 </a>
-
-#{secure.check 'Exército'}
-    <a href="@{Exercito.index}">Exército</a><br/>
-#{/secure.check}
-#{secure.check 'Polícia Militar'}
-    <a href="@{PM.index}">Polícia Militar</a><br/>
-#{/secure.check}
-#{secure.check 'Administrador'}
-    <a href="@{Admin.index}">Admin</a>
-#{/secure.check}
-
-#{set 'moreStyles'}
-
-#{/set}

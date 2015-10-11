@@ -5,7 +5,7 @@ package models.enums;
  */
 public enum TipoRequisicao {
 
-    AQUISICAO("Aquisição"), RENOVACAO("Renovação"), TRANSFERENCIA("Transferência");
+    AQUISICAO("Aquisição"), RENOVACAO("Renovação");
 
     TipoRequisicao(String descricao){
         this.descricao = descricao;
