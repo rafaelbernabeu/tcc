@@ -218,8 +218,13 @@
                             <li class="dropdown-profile">
                                 <div class="dp-cover">
                                     <img class="img-bg" src="assets/app/img/cover-blur.jpg" alt="">
-                                    <a class="img-avatar" href="page_profile.html">
+                                    <a class="img-avatar" href="#">
+                                        #{if userPhoto.exists()}
+                                        <img class="img-circle" src="/data/attachments/${userPhoto.UUID}" alt="">
+                                        #{/if}
+                                        #{else}
                                         <img class="img-circle" src="assets/app/img/avatar4.png" alt="">
+                                        #{/else}
                                     </a>
                                     <div class="dp-details">${user}</div>
                                 </div>
@@ -227,7 +232,9 @@
                             <li class="dropdown-footer">
                                 <div class="clearfix">
                                     <a href="@{Secure.logout()}" class="btn btn-sm btn-default pull-right">Logout</a>
-                                    <a href="page_profile.html" class="btn btn-sm btn-default pull-left">Profile</a>
+                                    #{form @Usuarios.editar(), method:'POST', enctype:'multipart/form-data'}
+                                        <button type="submit" class="btn btn-sm btn-default pull-left" name="id" value="${userId}">Perfil</button>
+                                    #{/form}
                                 </div>
                             </li><!-- /dropdown-footer -->
                         </ul><!-- /dropdown-extend -->

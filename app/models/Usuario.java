@@ -5,6 +5,7 @@ import models.enums.TipoLogin;
 import play.data.validation.Email;
 import play.data.validation.Password;
 import play.data.validation.Required;
+import play.db.jpa.Blob;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -36,7 +37,10 @@ public class Usuario extends Model {
     @Required
     public TipoLogin instituicao;
 
+    @Required
     public Estado estado;
+
+    public Blob foto;
 
     public static Usuario connect(String email, String password) {
         return find("byEmailAndPassword", email, password).first();

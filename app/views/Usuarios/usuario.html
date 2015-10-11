@@ -30,31 +30,51 @@
                     <div class="col-sm-10">
                         <input type="password" class="form-control" id="input3" placeholder="Senha" name="senha" value="${entity.password}">
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="inputSelect">Instituição</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="inputSelect" name="instituicao">
-                                <option #{if entity.instituicao.getDescricao().equals("Exército")} selected #{/if} value="EXERCITO">Exército</option>
-                                <option #{if entity.instituicao.getDescricao().equals("Polícia Militar")} selected #{/if} value="POLICIAMILITAR">Polícia Militar</option>
-                            </select>
-                        </div>
-                    </div>
-                    <label class="col-sm-2 control-label" for="input4">Matrícula</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="inputSelect">Instituição</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="input4" placeholder="Matrícula" name="matricula" value="${entity.matricula}">
+                        <select class="form-control" id="inputSelect" name="instituicao">
+                            <option #{if entity.instituicao.getDescricao().equals("Exército")} selected #{/if} value="EXERCITO">Exército</option>
+                            <option #{if entity.instituicao.getDescricao().equals("Polícia Militar")} selected #{/if} value="POLICIAMILITAR">Polícia Militar</option>
+                            <option #{if entity.instituicao.getDescricao().equals("Administrador")} selected #{/if} value="ADMIN">Administrador</option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="inputSelect2">Estado</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="inputSelect2" name="estado">
-                                #{list items:estados, as:"estado"}
-                                    <option #{if entity.estado.getDescricao().equals(estado.descricao)} selected #{/if} value="${estado.descricao}">${estado.descricao}</option>
-                                #{/list}
-                            </select>
-                        </div>
+                </div>
+                <label class="col-sm-2 control-label" for="input4">Matrícula</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="input4" placeholder="Matrícula" name="matricula" value="${entity.matricula}">
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="inputSelect2">Estado</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="inputSelect2" name="estado">
+                            #{list items:estados, as:"estado"}
+                                <option #{if entity.estado.getDescricao().equals(estado.descricao)} selected #{/if} value="${estado}">${estado.descricao}</option>
+                            #{/list}
+                        </select>
                     </div>
                 </div>
             </fieldset>
+                <br/>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="inputSelect3">Foto</label>
+                    <div class="fileinput fileinput-new" id="inputSelect3" data-provides="fileinput"><input type="hidden">
+                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px; line-height: 150px;">
+                            #{if userPhoto.exists()}
+                                <img src="/data/attachments/${userPhoto.UUID}" alt="">
+                            #{/if}
+                        </div>
+                        <div>
+                            <span class="btn btn-ion btn-primary btn-file">
+                                <span class="fileinput-new">Selecionar Imagem</span>
+                                <span class="fileinput-exists">Alterar</span>
+                                <input type="file" name="foto" accept="image/*">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             <br/>
             <input class="btn btn btn-primary" type="submit" name="submit" value="Salvar">
         </form><!-- /form -->

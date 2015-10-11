@@ -3,6 +3,8 @@ package controllers;
 import models.Usuario;
 import models.enums.Estado;
 import models.enums.TipoLogin;
+import play.db.jpa.Blob;
+import play.mvc.Before;
 import play.mvc.With;
 
 import java.util.List;
@@ -13,6 +15,17 @@ import java.util.List;
 @Check("Administrador")
 @With(Secure.class)
 public class Usuarios extends CRUD {
+
+    @Before
+    static void setConnectedUser() {
+        if(Security.isConnected()) {
+            Usuario user = Usuario.find("byEmail", Security.connected()).first();
+            renderArgs.put("user", user.nome);
+            renderArgs.put("email", user.email);
+            renderArgs.put("userId", user.id);
+            renderArgs.put("userPhoto", user.foto);
+        }
+    }
 
     public static void novo(String tipo) {
         Usuario entity = new Usuario();
@@ -26,7 +39,20 @@ public class Usuarios extends CRUD {
         render(usuarios);
     }
 
-    public static void salvar() {
+    public static void salvar(Long id, String nome, String email, String senha,
+                              String instituicao, String matricula, String estado, Blob foto) {
+
+        Usuario usuario = id != null ? (Usuario) Usuario.findById(id) : new Usuario();
+        usuario.nome = nome;
+        usuario.email = email;
+        usuario.password = senha;
+        usuario.instituicao = TipoLogin.valueOf(instituicao);
+        //usuario.estado = Estado.valueOf(estado);
+        usuario.matricula = matricula;
+        usuario.foto = foto;
+
+        usuario.save();
+        listar();
 
     }
 
