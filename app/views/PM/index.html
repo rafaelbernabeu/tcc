@@ -1,20 +1,11 @@
 #{extends '/syrena/templatePM.html' /}
 #{set title:'Home Polícia Militar' /}
 
-
-
 <div class="magic-layout isotope" style="position: relative; overflow: scroll; height: 1131px;">
 
-    <div class="panel panel-default magic-element isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(665px, 377px, 0px);">
-        <div class="panel-body-heading bg-danger">
-            <h3 class="pb-title">Donut Chart</h3>
-        </div>
-        <div id="chart-donut" class="chart"><svg height="300" version="1.1" width="616" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.28125px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><path fill="none" stroke="#3498db" d="M308,243.33333333333331A93.33333333333333,93.33333333333333,0,0,0,401.3333330454699,150.00733038285082" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#3498db" stroke="#ffffff" d="M308,246.33333333333331A96.33333333333333,96.33333333333333,0,0,0,404.33333303621714,150.00756600229963L442.99999958362605,150.01060287519496A135,135,0,0,1,308,285Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#e74c3c" d="M401.3333330454699,150.00733038285082A93.33333333333333,93.33333333333333,0,0,0,234.3054960170495,92.7266973728771" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#e74c3c" stroke="#ffffff" d="M404.33333303621714,150.00756600229963A96.33333333333333,96.33333333333333,0,0,0,231.9367441033118,90.88576978843386L201.40616388180374,67.15825870005436A135,135,0,0,1,442.99999958362605,150.01060287519496Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#2ecc71" d="M234.3054960170495,92.7266973728771A93.33333333333333,93.33333333333333,0,0,0,250.72090959672028,223.69000552099328" stroke-width="2" opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></path><path fill="#2ecc71" stroke="#ffffff" d="M231.9367441033118,90.88576978843386A96.33333333333333,96.33333333333333,0,0,0,248.87979597661484,226.0586128413109L222.08136439508039,260.5350082814899A140,140,0,0,1,197.45824402557423,64.09004605931564Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#f39c12" d="M250.72090959672028,223.69000552099328A93.33333333333333,93.33333333333333,0,0,0,307.9706784690489,243.333328727518" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#f39c12" stroke="#ffffff" d="M248.87979597661484,226.0586128413109A96.33333333333333,96.33333333333333,0,0,0,307.96973599126835,246.3333285794739L307.9575884998743,284.9999933380171A135,135,0,0,1,225.14988709525608,256.58732941429383Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="308" y="140" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: 800; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px" font-weight="800" transform="matrix(2.1212,0,0,2.1212,-345.3333,-169.303)" stroke-width="0.4714285714285715"><tspan dy="6" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Custard</tspan></text><text x="308" y="160" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: Arial;" font-size="14px" transform="matrix(1.9444,0,0,1.9444,-290.8889,-143.5556)" stroke-width="0.5142857142857143"><tspan dy="5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">25%</tspan></text></svg></div>
-    </div><!-- /panel -->
-
     <div class="panel panel-default magic-element isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 377px, 0px);">
-        <div class="panel-body-heading bg-warning">
-            <h3 class="pb-title">Bar Chart</h3>
+        <div class="panel-body-heading">
+            <h3 class="pb-title">Requisições Pendentes</h3>
         </div>
         <div id="chart-bar" class="chart" style="position: relative;">
             <svg height="300" version="1.1" width="297" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.40625px;"
@@ -29,6 +20,13 @@
             1,571
         </div></div></div>
     </div><!-- /panel -->
+    <div class="panel panel-default magic-element isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(665px, 377px, 0px);">
+        <div class="panel-body-heading">
+            <h3 class="pb-title">Tipos de Requisições</h3>
+        </div>
+        <div id="chart-donut" class="chart"><svg height="300" version="1.1" width="616" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.28125px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><path fill="none" stroke="#3498db" d="M308,243.33333333333331A93.33333333333333,93.33333333333333,0,0,0,401.3333330454699,150.00733038285082" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#3498db" stroke="#ffffff" d="M308,246.33333333333331A96.33333333333333,96.33333333333333,0,0,0,404.33333303621714,150.00756600229963L442.99999958362605,150.01060287519496A135,135,0,0,1,308,285Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#e74c3c" d="M401.3333330454699,150.00733038285082A93.33333333333333,93.33333333333333,0,0,0,234.3054960170495,92.7266973728771" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#e74c3c" stroke="#ffffff" d="M404.33333303621714,150.00756600229963A96.33333333333333,96.33333333333333,0,0,0,231.9367441033118,90.88576978843386L201.40616388180374,67.15825870005436A135,135,0,0,1,442.99999958362605,150.01060287519496Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#2ecc71" d="M234.3054960170495,92.7266973728771A93.33333333333333,93.33333333333333,0,0,0,250.72090959672028,223.69000552099328" stroke-width="2" opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></path><path fill="#2ecc71" stroke="#ffffff" d="M231.9367441033118,90.88576978843386A96.33333333333333,96.33333333333333,0,0,0,248.87979597661484,226.0586128413109L222.08136439508039,260.5350082814899A140,140,0,0,1,197.45824402557423,64.09004605931564Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#f39c12" d="M250.72090959672028,223.69000552099328A93.33333333333333,93.33333333333333,0,0,0,307.9706784690489,243.333328727518" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#f39c12" stroke="#ffffff" d="M248.87979597661484,226.0586128413109A96.33333333333333,96.33333333333333,0,0,0,307.96973599126835,246.3333285794739L307.9575884998743,284.9999933380171A135,135,0,0,1,225.14988709525608,256.58732941429383Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="308" y="140" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: 800; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-size="15px" font-weight="800" transform="matrix(2.1212,0,0,2.1212,-345.3333,-169.303)" stroke-width="0.4714285714285715"><tspan dy="6" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Custard</tspan></text><text x="308" y="160" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: Arial;" font-size="14px" transform="matrix(1.9444,0,0,1.9444,-290.8889,-143.5556)" stroke-width="0.5142857142857143"><tspan dy="5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">25%</tspan></text></svg></div>
+    </div><!-- /panel -->
+
 
 </div>
 
@@ -71,21 +69,18 @@
 
         // chart bar
         var data_bar = [
-            {device: 'iPhone', geekbench: 16},
-            {device: 'iPhone 3G', geekbench: 17},
-            {device: 'iPhone 3GS', geekbench: 25},
-            {device: 'iPhone 4', geekbench: 30},
-            {device: 'iPhone 4S', geekbench: 65},
-            {device: 'iPhone 5', geekbench: 11}
+            {requisicao: 'Aquisições', quantidade: ${aquisicoesPendentes}},
+            {requisicao: 'Renovações', quantidade: ${renovacoesPendentes}},
+            {requisicao: 'Transferências', quantidade: ${transferenciasPendentes}},
         ],
         chart_bar = Morris.Bar({
             element: 'chart-bar',
             data: data_bar,
-            barColors: ['#f39c12'],
+            barColors: ['#3495C4'],
             gridTextColor: '#34495e',
-            xkey: 'device',
-            ykeys: ['geekbench'],
-            labels: ['Geekbench'],
+            xkey: 'requisicao',
+            ykeys: ['quantidade'],
+            labels: ['Pendentes'],
             barRatio: 0.4,
             xLabelAngle: 35,
             hideHover: 'auto'

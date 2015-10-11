@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                                       Application.index
-GET     /admin                                  Admin.index
+#GET     /admin                                  Admin.index
 
 GET     /pm/home                                PM.index
 
@@ -78,6 +78,7 @@ GET     /ex/aquisicoes/assets/                  staticDir:app/views/syrena/asset
 GET     /ex/renovacoes/assets/                  staticDir:app/views/syrena/assets
 GET     /ex/formularios/assets/                 staticDir:app/views/syrena/assets
 GET     /ex/transferencias/assets/              staticDir:app/views/syrena/assets
+GET     /ex/anexo1/assets/                      staticDir:app/views/syrena/assets
 GET     /ex/anexo2/assets/                      staticDir:app/views/syrena/assets
 
 # Catch all

@@ -36,8 +36,11 @@ public class PM extends Controller {
         Integer qtdAquisicoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.AQUISICAO).fetch().size();
         Integer qtdRenovacoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.RENOVACAO).fetch().size();
         Integer qtdTransferencias = Transferencia.findAll().size();
+        Integer aquisicoesPendentes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.AQUISICAO, TipoParecer.PENDENTE).fetch().size();
+        Integer renovacoesPendentes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.PENDENTE).fetch().size();
+        Integer transferenciasPendentes = Transferencia.find("byParecer", TipoParecer.PENDENTE).fetch().size();
 
-        render(qtdAquisicoes, qtdRenovacoes, qtdTransferencias);
+        render(qtdAquisicoes, qtdRenovacoes, qtdTransferencias, aquisicoesPendentes, renovacoesPendentes, transferenciasPendentes);
     }
 
     //Cria nova aquisicao
