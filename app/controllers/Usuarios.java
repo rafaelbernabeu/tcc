@@ -42,14 +42,15 @@ public class Usuarios extends CRUD {
     public static void salvar(Long id, String nome, String email, String senha,
                               String instituicao, String matricula, String estado, Blob foto) {
 
+        checkAuthenticity();
         Usuario usuario = id != null ? (Usuario) Usuario.findById(id) : new Usuario();
         usuario.nome = nome;
         usuario.email = email;
         usuario.password = senha;
         usuario.instituicao = TipoLogin.valueOf(instituicao);
-        //usuario.estado = Estado.valueOf(estado);
+        usuario.estado = Estado.getEstadoByDescricao(estado);
         usuario.matricula = matricula;
-        usuario.foto = foto;
+        usuario.foto = foto != null ? foto : usuario.foto;
 
         usuario.save();
         listar();
@@ -63,6 +64,7 @@ public class Usuarios extends CRUD {
     }
 
     public static void excluir(Long id) {
+        checkAuthenticity();
         Usuario entity = Usuario.findById(id);
         entity.delete();
         listar();

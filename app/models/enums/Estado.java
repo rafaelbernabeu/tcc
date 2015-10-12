@@ -27,6 +27,15 @@ public enum Estado {
     }
     public String getSigla() { return sigla; }
 
+    public static Estado getEstadoByDescricao(String descricao) {
+        for (Estado estado : Estado.values()) {
+            if (estado.getDescricao().equals(descricao)) {
+                return estado;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         return descricao;
