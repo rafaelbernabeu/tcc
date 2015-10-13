@@ -29,6 +29,7 @@ public class Usuarios extends CRUD {
 
     public static void novo(String tipo) {
         Usuario entity = new Usuario();
+        entity.foto = new Blob();
         entity.instituicao = TipoLogin.valueOf(tipo);
         Estado[] estados = Estado.values();
         render("/Usuarios/usuario.html", entity, estados);
