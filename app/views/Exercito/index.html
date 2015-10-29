@@ -65,9 +65,9 @@
 
         // chart donut
         var data_donut = [
-            {label: 'Aquisições', value: ${Math.round((qtdAquisicoes / (qtdTransferencias + qtdAquisicoes + qtdRenovacoes)) * 100)} },
-            {label: 'Renovações', value: ${Math.round((qtdRenovacoes / (qtdTransferencias + qtdAquisicoes + qtdRenovacoes)) * 100)} },
-            {label: 'Transferências', value: ${Math.round((qtdTransferencias / (qtdTransferencias + qtdAquisicoes + qtdRenovacoes)) * 100)} },
+            {label: 'Aquisições', value: #{if qtdAquisicoes == 0}0#{/if} #{else} ${Math.round((qtdAquisicoes / (qtdTransferencias + qtdAquisicoes + qtdRenovacoes)) * 100)} #{/else} },
+            {label: 'Renovações', value:  #{if qtdRenovacoes == 0}0#{/if} #{else} ${Math.round((qtdRenovacoes / (qtdTransferencias + qtdAquisicoes + qtdRenovacoes)) * 100)} #{/else} },
+            {label: 'Transferências', value:  #{if qtdTransferencias == 0}0#{/if} #{else} ${Math.round((qtdTransferencias / (qtdTransferencias + qtdAquisicoes + qtdRenovacoes)) * 100)} #{/else} },
         ],
         chart_donut = Morris.Donut({
             element: 'chart-donut',
