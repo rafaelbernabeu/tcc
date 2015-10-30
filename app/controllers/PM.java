@@ -30,8 +30,8 @@ public class PM extends Controller {
             renderArgs.put("userId", user.id);
             renderArgs.put("userPhoto", user.foto);
             renderArgs.put("estado", user.estado.getSigla());
-            if (user.instituicao.equals(TipoLogin.EXERCITO)) {
-                Exercito.index();
+            if (user.instituicao.equals(TipoLogin.DFPC)) {
+                DFPC.index();
             }
         }
     }

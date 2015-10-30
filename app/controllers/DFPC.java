@@ -6,7 +6,6 @@ import models.enums.TipoParecer;
 import models.enums.TipoLogin;
 import models.Usuario;
 import models.enums.TipoRequisicao;
-import play.data.validation.Required;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
@@ -16,9 +15,9 @@ import java.util.List;
 /**
  * Created by Rafael on 17/09/2015.
  */
-@Check("Exército")
+@Check("Diretoria de Fiscalização de Produtos Controlados")
 @With(Secure.class)
-public class Exercito extends Controller {
+public class DFPC extends Controller {
 
     @Before
     static void setConnectedUser() {
@@ -48,12 +47,12 @@ public class Exercito extends Controller {
     //Seleciona para edicao
     public static void editarAnexo1(Long id) {
         AquisicaoRenovacao entity = AquisicaoRenovacao.findById(id);
-        render("/Exercito/anexo1.html", entity);
+        render("/DFPC/anexo1.html", entity);
     }
 
     public static void editarAnexo2(Long id) {
         Transferencia entity = Transferencia.findById(id);
-        render("/Exercito/anexo2.html", entity);
+        render("/DFPC/anexo2.html", entity);
     }
 
     //Salva alteracoes anexo1
@@ -77,7 +76,7 @@ public class Exercito extends Controller {
                         aquisicoesPendentes();
                         break;
                     default:
-                        Exercito.index();
+                        DFPC.index();
                         break;
                 }
                 break;
@@ -95,7 +94,7 @@ public class Exercito extends Controller {
                 }
                 break;
             default:
-                Exercito.index();
+                DFPC.index();
                 break;
         }
     }
@@ -119,7 +118,7 @@ public class Exercito extends Controller {
                 transferenciasPendentes();
                 break;
             default:
-                Exercito.index();
+                DFPC.index();
                 break;
         }
 
@@ -127,67 +126,67 @@ public class Exercito extends Controller {
 
     public static void aquisicoesPendentes() {
         List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.AQUISICAO, TipoParecer.PENDENTE).fetch();
-        render("/Exercito/aquisicoes.html", aquisicoes);
+        render("/DFPC/aquisicoes.html", aquisicoes);
     }
 
     public static void aquisicoesFavoraveis() {
         List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.AQUISICAO, TipoParecer.FAVORAVEL).fetch();
-        render("/Exercito/aquisicoes.html", aquisicoes);
+        render("/DFPC/aquisicoes.html", aquisicoes);
     }
 
     public static void aquisicoesDesfavoraveis() {
         List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.AQUISICAO, TipoParecer.DESFAVORAVEL).fetch();
-        render("/Exercito/aquisicoes.html", aquisicoes);
+        render("/DFPC/aquisicoes.html", aquisicoes);
     }
 
     public static void todasAquisicoes() {
         List<AquisicoesRenovacoes> aquisicoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.AQUISICAO).fetch();
-        render("/Exercito/aquisicoes.html", aquisicoes);
+        render("/DFPC/aquisicoes.html", aquisicoes);
     }
 
     public static void renovacoesPendentes() {
         List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.PENDENTE).fetch();
-        render("/Exercito/renovacoes.html", renovacoes);
+        render("/DFPC/renovacoes.html", renovacoes);
     }
 
     public static void renovacoesFavoraveis() {
         List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.FAVORAVEL).fetch();
-        render("/Exercito/renovacoes.html", renovacoes);
+        render("/DFPC/renovacoes.html", renovacoes);
     }
 
     public static void renovacoesDesfavoraveis() {
         List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicaoAndParecer", TipoRequisicao.RENOVACAO, TipoParecer.DESFAVORAVEL).fetch();
-        render("/Exercito/renovacoes.html", renovacoes);
+        render("/DFPC/renovacoes.html", renovacoes);
     }
 
     public static void todasRenovacoes() {
         List<AquisicoesRenovacoes> renovacoes = AquisicaoRenovacao.find("byRequisicao", TipoRequisicao.RENOVACAO).fetch();
-        render("/Exercito/renovacoes.html", renovacoes);
+        render("/DFPC/renovacoes.html", renovacoes);
     }
 
     public static void transferenciasPendentes() {
         List<Transferencia> transferencias = Transferencia.find("byParecer", TipoParecer.PENDENTE).fetch();
-        render("/Exercito/transferencias.html", transferencias);
+        render("/DFPC/transferencias.html", transferencias);
     }
 
     public static void transferenciasRespondidas() {
         List<Transferencia> transferencias = Transferencia.find("byParecerNotEqual", TipoParecer.PENDENTE).fetch();
-        render("/Exercito/transferencias.html", transferencias);
+        render("/DFPC/transferencias.html", transferencias);
     }
 
     public static void transferenciasFavoraveis() {
         List<Transferencia> transferencias = Transferencia.find("byParecer", TipoParecer.FAVORAVEL).fetch();
-        render("/Exercito/transferencias.html", transferencias);
+        render("/DFPC/transferencias.html", transferencias);
     }
 
     public static void transferenciasDesfavoraveis() {
         List<Transferencia> transferencias = Transferencia.find("byParecer", TipoParecer.DESFAVORAVEL).fetch();
-        render("/Exercito/transferencias.html", transferencias);
+        render("/DFPC/transferencias.html", transferencias);
     }
 
     public static void todasTransferencias() {
         List<Transferencia> transferencias = Transferencia.findAll();
-        render("/Exercito/transferencias.html", transferencias);
+        render("/DFPC/transferencias.html", transferencias);
     }
 
 }

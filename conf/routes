@@ -31,25 +31,25 @@ POST    /pm/requisicoes/anexo1/excluir          PM.excluirAnexo1
 POST    /pm/requisicoes/anexo2/editar           PM.editarAnexo2
 POST    /pm/requisicoes/anexo2/excluir          PM.excluirAnexo2
 
-GET     /ex/home                                Exercito.index
-GET     /ex/aquisicoes/pendentes                Exercito.aquisicoesPendentes
-GET     /ex/aquisicoes/favoraveis               Exercito.aquisicoesFavoraveis
-GET     /ex/aquisicoes/desfavoraveis            Exercito.aquisicoesDesfavoraveis
-GET     /ex/aquisicoes/todas                    Exercito.todasAquisicoes
-GET     /ex/renovacoes/pendentes                Exercito.renovacoesPendentes
-GET     /ex/renovacoes/favoraveis               Exercito.renovacoesFavoraveis
-GET     /ex/renovacoes/desvaforaveis            Exercito.renovacoesDesfavoraveis
-GET     /ex/renovacoes/todas                    Exercito.todasRenovacoes
-GET     /ex/transferencias/pendentes            Exercito.transferenciasPendentes
-GET     /ex/transferencias/favoraveis           Exercito.transferenciasFavoraveis
-GET     /ex/transferencias/desfavoraveis        Exercito.transferenciasDesfavoraveis
-GET     /ex/transferencias/todas                Exercito.todasTransferencias
+GET     /dfpc/home                                DFPC.index
+GET     /dfpc/aquisicoes/pendentes                DFPC.aquisicoesPendentes
+GET     /dfpc/aquisicoes/favoraveis               DFPC.aquisicoesFavoraveis
+GET     /dfpc/aquisicoes/desfavoraveis            DFPC.aquisicoesDesfavoraveis
+GET     /dfpc/aquisicoes/todas                    DFPC.todasAquisicoes
+GET     /dfpc/renovacoes/pendentes                DFPC.renovacoesPendentes
+GET     /dfpc/renovacoes/favoraveis               DFPC.renovacoesFavoraveis
+GET     /dfpc/renovacoes/desvaforaveis            DFPC.renovacoesDesfavoraveis
+GET     /dfpc/renovacoes/todas                    DFPC.todasRenovacoes
+GET     /dfpc/transferencias/pendentes            DFPC.transferenciasPendentes
+GET     /dfpc/transferencias/favoraveis           DFPC.transferenciasFavoraveis
+GET     /dfpc/transferencias/desfavoraveis        DFPC.transferenciasDesfavoraveis
+GET     /dfpc/transferencias/todas                DFPC.todasTransferencias
 
-POST    /ex/anexo1/editar                       Exercito.editarAnexo1
-POST    /ex/anexo1/salvar                       Exercito.salvarAnexo1
+POST    /dfpc/anexo1/editar                       DFPC.editarAnexo1
+POST    /dfpc/anexo1/salvar                       DFPC.salvarAnexo1
 
-POST    /ex/anexo2/editar                       Exercito.editarAnexo2
-POST    /ex/anexo2/salvar                       Exercito.salvarAnexo2
+POST    /dfpc/anexo2/editar                       DFPC.editarAnexo2
+POST    /dfpc/anexo2/salvar                       DFPC.salvarAnexo2
 
 GET     /usuarios/novo/{tipo}                   Usuarios.novo
 GET     /usuarios/listar                        Usuarios.listar
@@ -81,12 +81,12 @@ GET     /pm/requisicoes/aquisicoes/assets/       staticDir:app/views/syrena/asse
 GET     /pm/requisicoes/renovacoes/assets/       staticDir:app/views/syrena/assets
 GET     /pm/requisicoes/transferencias/assets/   staticDir:app/views/syrena/assets
 
-GET     /ex/assets/                             staticDir:app/views/syrena/assets
-GET     /ex/anexo1/assets/                      staticDir:app/views/syrena/assets
-GET     /ex/anexo2/assets/                      staticDir:app/views/syrena/assets
-GET     /ex/aquisicoes/assets/                  staticDir:app/views/syrena/assets
-GET     /ex/renovacoes/assets/                  staticDir:app/views/syrena/assets
-GET     /ex/transferencias/assets/              staticDir:app/views/syrena/assets
+GET     /dfpc/assets/                             staticDir:app/views/syrena/assets
+GET     /dfpc/anexo1/assets/                      staticDir:app/views/syrena/assets
+GET     /dfpc/anexo2/assets/                      staticDir:app/views/syrena/assets
+GET     /dfpc/aquisicoes/assets/                  staticDir:app/views/syrena/assets
+GET     /dfpc/renovacoes/assets/                  staticDir:app/views/syrena/assets
+GET     /dfpc/transferencias/assets/              staticDir:app/views/syrena/assets
 
 GET     /usuarios/assets/                       staticDir:app/views/syrena/assets
 GET     /usuarios/novo/assets/                  staticDir:app/views/syrena/assets
